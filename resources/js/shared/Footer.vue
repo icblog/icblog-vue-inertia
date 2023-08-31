@@ -5,8 +5,6 @@
         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 pb-4">
           <h6>Site links</h6>
           <i class="fa fa-home"></i><AppLink linkUrl="/"> Home</AppLink><br />
-          <i class="fa fa-question-circle"></i><AppLink linkUrl="/about"> About</AppLink
-          ><br />
           <i class="fa fa-briefcase"></i><AppLink linkUrl="/resume"> Resume</AppLink
           ><br />
           <i class="fab fa-blogger"></i
@@ -37,7 +35,7 @@
           <i class="fab fa-medium-m"></i>
           <AppLink linkUrl="https://medium.com" linkType="ext"> Medium.com</AppLink><br />
 
-          <i className="fa fa-copyright" aria-hidden="true"></i> {{ copyRightData }}
+          <i class="fa fa-copyright" aria-hidden="true"></i> {{ copyRightData }}
         </div>
       </div>
     </div>

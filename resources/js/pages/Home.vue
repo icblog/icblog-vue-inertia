@@ -100,14 +100,7 @@
                           <span class="tech-stack-name"> Mysql . </span>
                           <span class="tech-stack-name"> Laravel </span>
 
-                          <span class="source-link-wrapper"
-                            ><a
-                              href="https://adomballoons.42web.io"
-                              rel="noreferrer"
-                              target="_blank"
-                              ><strong>Site link</strong></a
-                            >
-                            <strong>.</strong>
+                          <span class="source-link-wrapper">
                             <a
                               href="https://github.com/icblog/icblog-portfolio"
                               rel="noreferrer"
@@ -182,10 +175,10 @@
                       <div class="box-shadow skill-detail">
                         <h6 class="skills-heading">Languages</h6>
                         <div class="all-skill-wrapper">
-                        <span> Html/Html5</span> . <span> Css/Css3/Scss</span> .
-                        <span> JavaScript</span> .
-                        <span> Php</span>
-                      </div>
+                          <span> Html/Html5</span> . <span> Css/Css3/Scss</span> .
+                          <span> JavaScript</span> .
+                          <span> Php</span>
+                        </div>
                       </div>
                     </div>
 
@@ -193,11 +186,11 @@
                       <div class="box-shadow skill-detail">
                         <h6 class="skills-heading">Frameworks</h6>
                         <div class="all-skill-wrapper">
-                        <span>Laravel/Blade</span> . <span> Bootstrap</span> .
-                        <span> Jquery/Ajax</span> . <span> React Js</span> .
-                        <span> Vue Js</span> .
-                        <span> Inertia Js</span>
-                      </div>
+                          <span>Laravel/Blade</span> . <span> Bootstrap</span> .
+                          <span> Jquery/Ajax</span> . <span> React Js</span> .
+                          <span> Vue Js</span> .
+                          <span> Inertia Js</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -207,20 +200,20 @@
                       <div class="box-shadow skill-detail">
                         <h6 class="skills-heading">Database &amp; Drivers</h6>
                         <div class="all-skill-wrapper">
-                        <span>Mysql/PhpMyAdmin</span> .
-                        <span> MongoDB</span>
-                      </div>
+                          <span>Mysql/PhpMyAdmin</span> .
+                          <span> MongoDB</span>
+                        </div>
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="box-shadow skill-detail">
                         <h6 class="skills-heading">Tools &amp; Systems</h6>
-                       <div class="all-skill-wrapper">
-                        <span>Npm</span> . <span> Composer</span> .
-                        <span> Git/Github</span> .
-                        <span> VS code</span>
-                      </div>
+                        <div class="all-skill-wrapper">
+                          <span>Npm</span> . <span> Composer</span> .
+                          <span> Git/Github</span> .
+                          <span> VS code</span>
+                        </div>
                       </div>
                     </div>
                   </div>

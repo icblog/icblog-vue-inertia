@@ -8,6 +8,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
       <!-- APP CSS -->
+      
     @if(App::environment(['local', 'staging']))
     <link rel="stylesheet" href="{{ asset('css/app.css?v='.rand(1,99)) }}">
     @else

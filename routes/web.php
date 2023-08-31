@@ -19,6 +19,10 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\AdminCategoryController;
 
+//IV IMPORT
+use App\Http\Controllers\IvHomeController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -107,3 +111,9 @@ Route::get('/admin/categories',[AdminCategoryController::class, 'categoriesIndex
 Route::post('/admin/update-category',[AdminCategoryController::class, 'updateCategory'])->name("admin.updateCategory")->middleware('isAdmin');
 Route::post('/admin/delete-category',[AdminCategoryController::class, 'deleteCategory'])->name("admin.deleteCategory")->middleware('isAdmin');
 Route::post('/admin/create-catgory',[AdminCategoryController::class, 'createCategory'])->name("admin.createCategory")->middleware('isAdmin');
+
+
+
+
+// ========== IVISITOR ROUTE ===========//
+Route::get('/iv',[IvHomeController::class,'index'])->name('iv.home');
