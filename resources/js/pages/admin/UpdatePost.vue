@@ -2,9 +2,9 @@
   <Layout pageTitle="admin-update-post">
     <div class="container">
       <div class="row">
-        <div class="col-md-10 mx-auto">
-          <div class="page-intro-wrapper">
-            <h1>Admin update post</h1>
+        <div class="col-md-10 mx-auto pt-5">
+          <div class="page-intro-wrapper pb-3">
+            <h3>Admin update post</h3>
           </div>
           <div class="form-wrapper">
             <section v-if="updatePostFormData.processing"><LoadingIndicator /></section>

@@ -2,11 +2,11 @@
   <Layout pageTitle="admin-create-post">
     <div class="container">
       <div class="row">
-        <div class="col-md-10 mx-auto">
+        <div class="col-md-10 mx-auto pt-5">
           <div class="page-intro-wrapper pb-3">
             <div class="row">
               <div class="col-md-7">
-                <h1>Admin create post</h1>
+                <h3>Admin create post</h3>
               </div>
               <div class="col-md-4 admin-page-intro-btn-wrapper">
                 <AppLink

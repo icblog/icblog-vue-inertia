@@ -2,11 +2,11 @@
   <Layout pageTitle="admin-all-post">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 pt-5">
           <div class="page-intro-wrapper pb-3">
             <div class="row">
               <div class="col-md-7">
-                <h1>{{ pageIntro }}</h1>
+                <h3>{{ pageIntro }}</h3>
               </div>
               <div class="col-md-4 admin-page-intro-btn-wrapper">
                 <AppLink

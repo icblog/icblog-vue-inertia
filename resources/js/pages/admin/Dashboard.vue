@@ -1,14 +1,7 @@
 <template>
   <Layout pageTitle="admin-dashboard">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="page-intro-wrapper">
-            <h1>Admin Dashboard</h1>
-          </div>
-        </div>
-      </div>
-
+      <PageIntro intro="Dashboard" />
       <div class="row pt-5">
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
           <AppLink
@@ -40,10 +33,8 @@
   </Layout>
 </template>
 
-<script>
+<script setup>
 import AppLink from "../../shared/AppLink.vue";
 import Layout from "../../shared/Layout";
-export default {
-  components: { Layout, AppLink },
-};
+import PageIntro from "../../shared/PageIntro";
 </script>
