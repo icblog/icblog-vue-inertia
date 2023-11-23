@@ -4,11 +4,11 @@
       {{ appName + " | " + pageTitle }}
     </title>
   </Head>
-  <Header />
+  <Header :handlePageNav="handlePageNav" />
   <div class="content-wrapper">
     <slot />
   </div>
-  <Footer />
+  <Footer :handlePageNav="handlePageNav" />
 </template>
 <script>
 //appDataObj.appName variable comes from views/app.blade.php
@@ -23,6 +23,10 @@ defineProps({
   pageTitle: {
     type: String,
     default: "",
+  },
+  handlePageNav: {
+    type: Function,
+    default: null,
   },
 });
 </script>

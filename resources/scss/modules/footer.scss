@@ -1,8 +1,38 @@
 footer {
 	padding: 1rem;
-	margin-top: 2rem;
 	font-size: 0.9rem;
-	background-color: $lightGreyColor;
+	background-color: $blackColor;
+	color: $midGreyColor;
+}
+
+footer h6 {
+	font-weight: 700;
+	color: $midGreyColor;
+	padding-bottom: 0.3rem;
+	padding-top: 0.3rem;
+}
+
+footer ul li button {
+	padding: 0 !important;
+	font-size: 0.9rem !important;
+	color: $midGreyColor !important;
+
+	&:hover {
+		color: $lightGreyColor !important;
+	}
+}
+
+footer ul li a {
+	color: $midGreyColor;
+
+	&:hover {
+		color: $lightGreyColor;
+		text-decoration: none;
+	}
+}
+
+footer .footer-links {
+	margin-left: 0.1rem;
 }
 
 .scroll-to-topbtn {

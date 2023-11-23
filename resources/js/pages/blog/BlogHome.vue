@@ -2,9 +2,9 @@
   <Layout pageTitle="blog-home">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <div class="page-intro-wrapper pb-3">
-            <h1>{{ pageIntro }}</h1>
+        <div class="col-md-12 pt-5">
+          <div class="page-intro-wrapper pb-4">
+            <h3 class="pt-2">{{ pageIntro }}</h3>
           </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 mt-2 mb-3">
@@ -84,7 +84,7 @@
                 </div>
               </div>
               <span ref="loadMoreIntersect" />
-              <div v-if="isPaginating" class="text-center pt-4 pb-4">
+              <div v-show="isPaginating" class="text-center pt-4 pb-4">
                 <LoadingIndicator />
               </div>
             </section>

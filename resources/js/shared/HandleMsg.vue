@@ -1,9 +1,9 @@
 <template>
   <div :class="classValue" aria-live="assertive">
-  <span v-show="showHeading">
-    <strong>{{ msgHeading }}</strong
-    ><br />
-  </span>
+    <span v-show="showHeading">
+      <strong>{{ msgHeading }}</strong
+      ><br />
+    </span>
     <span v-html="props.msg"></span>
     <!-- {{ props.msg }} -->
   </div>
@@ -12,7 +12,7 @@
 <script setup>
 import { ref } from "vue";
 
-let classValue = ref("no-border-radius alert"),
+let classValue = ref("no-border-radius msg-div alert"),
   msgHeading = ref("");
 if (props.infotype == "success") {
   classValue.value = `${classValue.value} alert-success`;

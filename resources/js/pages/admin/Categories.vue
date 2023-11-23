@@ -185,13 +185,13 @@
 <script setup>
 import { ref, reactive, onMounted } from "vue";
 import { router } from "@inertiajs/vue3";
-import AppLink from "../../shared/AppLink.vue";
-import AppButton from "../../shared/AppButton.vue";
+import AppLink from "../../shared/AppLink";
+import AppButton from "../../shared/AppButton";
 import Layout from "../../shared/Layout";
-import LoadingIndicator from "../../shared/LoadingIndicator.vue";
-import HandleMsg from "../../shared/HandleMsg.vue";
-import NewCategoryform from "./NewCategoryForm.vue";
-import LocalSearch from "../../shared/LocalSearch.vue";
+import LoadingIndicator from "../../shared/LoadingIndicator";
+import HandleMsg from "../../shared/HandleMsg";
+import NewCategoryform from "./NewCategoryForm";
+import LocalSearch from "../../shared/LocalSearch";
 import axios from "../../api/axios";
 import { removeItemFromArrOrObjByValue, returnSystemErrorMsg } from "../../helper/util";
 

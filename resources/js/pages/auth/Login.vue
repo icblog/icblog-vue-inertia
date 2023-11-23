@@ -2,10 +2,14 @@
   <Layout pageTitle="user-login">
     <div class="container">
       <div class="row">
-        <div class="col-md-7 mx-auto">
-          <div class="page-intro-wrapper">
-            <h1>Welcome back</h1>
+        <div class="col-md-12 pt-5 text-center">
+          <div class="page-intro-wrapper pb-4">
+            <h3 class="pt-2">Welcome back</h3>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7 mx-auto">
           <div class="form-wrapper">
             <section v-if="processing"><LoadingIndicator /></section>
             <section v-if="!processing">

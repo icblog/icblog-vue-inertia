@@ -1,243 +1,475 @@
 <template>
-  <Layout pageTitle="home">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 mx-auto">
-          <div class="page-intro-wrapper">
-            <h1>Hi, I'm Isaac Cobbinah.</h1>
-            <p>
+  <Layout pageTitle="home" :handlePageNav="handlePageNav">
+    <section ref="homeSectionRef" class="home-section-wrapper section-wrapper">
+      <div class="container">
+        <div class="row pt-5">
+          <div class="col-md-9 mx-auto text-center pt-5">
+            <h2>Hi, I'm Isaac Cobbinah.</h2>
+            <p class="mb-4">
               Highly motivated self-taught full-stack php web developer with a focus on
-              responsive design and accessibility seeking to kick start a career in web
-              development and services.
+              responsive and minimalist web applications.
+            </p>
+            <AppButton
+              customClass="primary-btn pl-5 pr-5"
+              :btnFunc="() => handlePageNav('projects')"
+              >Projects</AppButton
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section ref="aboutSectionRef" class="about-section-wrapper section-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 mx-auto text-center">
+            <h2 class="section-h2">About me</h2>
+            <p>
+              Read more about me below including my skills, web stack evolves therefore
+              I'm constantly learning and improving my skills. I love solving problems
+              with web tech so don't hesitate to contact if you have a project that match
+              my skills.
+            </p>
+          </div>
+        </div>
+        <div class="row pt-5">
+          <div class="col-md-6 pr-4">
+            <h5 class="pb-3 pt-2">Get to know me!</h5>
+            <p>
+              Around 2015 my interest in web tech grew and therefore decided to take my
+              first coding lessions in Html & Javascript on
+              <a
+                class="w3c-link"
+                href="https://www.w3schools.com/"
+                rel="noreferrer"
+                target="_blank"
+                >w3schools website</a
+              >
+              and ever since I produced the famous <strong>"Hello World"</strong> to the
+              console of my first application I knew I have found a new hobby.
             </p>
             <p>
-              Read more about me below and thank you for taking time to visit my website.
+              What started as hobby and a simple
+              <strong>"Hello World"</strong> application has become a full blown passion
+              of mine as years gone by and has offered me opportunity to constantly learn
+              and further develope my skills in solving complex logic behind creating web
+              applications.
+            </p>
+            <AppButton
+              customClass="primary-btn pl-5 pr-5"
+              :btnFunc="() => handlePageNav('contact')"
+              >Contact me</AppButton
+            >
+          </div>
+          <div class="col-md-6 pl-4">
+            <h5 class="pb-3 pt-2">My Skills</h5>
+
+            <div class="skill-detail">
+              <p class="skills-heading">Languages</p>
+              <div class="all-skill-wrapper">
+                <span>Html/Html5</span>
+                <span>Css/Css3/Scss</span>
+                <span>JavaScript</span>
+                <span>Php</span>
+              </div>
+            </div>
+            <!-- end languages -->
+            <div class="skill-detail">
+              <p class="skills-heading">Frameworks</p>
+              <div class="all-skill-wrapper">
+                <span>Laravel/Blade</span>
+                <span>Bootstrap</span>
+                <span> Jquery/Ajax</span>
+                <!-- <span>React Js</span> -->
+                <span>Vue Js</span>
+                <span>Inertia Js</span>
+              </div>
+            </div>
+            <!-- end Frameworks -->
+            <div class="skill-detail">
+              <p class="skills-heading">Database &amp; Drivers</p>
+              <div class="all-skill-wrapper">
+                <span>Mysql</span>
+                <span>PhpMyAdmin</span>
+                <!-- <span>MongoDB</span> -->
+              </div>
+            </div>
+            <!-- end Database &amp; Drivers -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section ref="projectsSectionRef" class="project-section-wrapper section-wrapper">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-9 mx-auto text-center mb-3">
+            <h2 class="section-h2">Projects</h2>
+            <p>
+              Below are a few personal and clients projects I have completed over the
+              course of my coding journey.
             </p>
           </div>
         </div>
+        <carousel class="story-carousel story-carousel--colors" :hideArrowsOnBound="true">
+          <slide class="story-carousel__slide">
+            <div class="row pb-4">
+              <div class="col-md-8">
+                <img
+                  src="../../../public/images/ivisitor.png"
+                  class="projects__row-img"
+                  alt="Icblog project image"
+                />
+              </div>
+              <div class="col-md-4">
+                <h5 class="pb-3 pt-2">Ic visitors</h5>
+                <p>
+                  This application was inspired by a visitors sign in and out system in my
+                  work place that needed some improvements. I created a demo sign in and
+                  out from scratch to show the technical team, my line manager how the
+                  current system could be improved.
+                </p>
+                <span class="mr-4"
+                  ><AppLink linkType="ext" linkUrl="https://iv.icblog.uk/"
+                    >Live</AppLink
+                  ></span
+                >
+                <span
+                  ><AppLink linkType="ext" linkUrl="https://github.com/icblog/ivisitor"
+                    >Source code</AppLink
+                  ></span
+                >
+              </div>
+            </div>
+            <!-- end project -->
+          </slide>
+          <slide class="story-carousel__slide">
+            <div class="row pb-4">
+              <div class="col-md-8">
+                <img
+                  src="../../../public/images/xyz-admin.png"
+                  class="projects__row-img"
+                  alt="Icblog project image"
+                />
+              </div>
+              <div class="col-md-4">
+                <h5 class="pb-3 pt-2">IC-admin</h5>
+                <p>
+                  This is a demo admin system I created to manage all applications for a
+                  fictional Ic company app.
+                </p>
+                <span class="mr-4"
+                  ><AppLink linkType="ext" linkUrl="https://xyzadmin.icblog.uk/"
+                    >Live</AppLink
+                  ></span
+                >
+                <span
+                  ><AppLink linkType="ext" linkUrl="https://github.com/icblog/xyzadmin"
+                    >Source code</AppLink
+                  ></span
+                >
+              </div>
+            </div>
+            <!-- end project -->
+          </slide>
+          <slide class="story-carousel__slide">
+            <div class="row pb-4">
+              <div class="col-md-8">
+                <img
+                  src="../../../public/images/icblog-portfolio-img.png"
+                  class="projects__row-img"
+                  alt="Icblog project image"
+                />
+              </div>
+              <div class="col-md-4">
+                <h5 class="pb-3 pt-2">Icblog</h5>
+                <p>
+                  This is the site you're currently browsing. Here, I showcase my skills
+                  and what I know so far with a blog section to give something back to the
+                  online community that has been a huge part of my coding journey.
+                </p>
+                <!-- <span class="mr-4">
+                  <AppButton :btnFunc="() => handlePageNav('home')">Live</AppButton></span
+                > -->
+                <span
+                  ><AppLink
+                    linkType="ext"
+                    linkUrl="https://github.com/icblog/icblog-vue-inertia"
+                    >Source code</AppLink
+                  ></span
+                >
+              </div>
+            </div>
+            <!-- end project -->
+          </slide>
+        </carousel>
+        <hr />
       </div>
+    </section>
 
-      <!-- About me -->
+    <section ref="contactSectionRef" class="contact-section-wrapper section-wrapper">
+      <div class="container pt-4 pb-4">
+        <div class="row">
+          <div class="col-md-9 mx-auto">
+            <div class="text-center">
+              <h2 class="section-h2">Contact</h2>
+              <p>
+                Use the form below to message me and I will get back to you as soon as I
+                can thank you.
+              </p>
+            </div>
+            <div class="form-wrapper mb-5">
+              <section v-show="contactForm.processing"><LoadingIndicator /></section>
 
-      <div class="row">
-        <div class="col-md-10 mx-auto">
-          <div class="about-detail-wrapper">
-            <section class="pb-3">
-              <Accordion
-                :key="0"
-                :activeIndex="currentlyActiveIndex"
-                :itemIndex="0"
-                @update:itemIndex="currentlyActiveIndex = $event"
+              <section
+                v-show="contactForm.systemErrMsg != '' || contactForm.successMsg != ''"
               >
-                <template v-slot:accordion-trigger> How I started </template>
-                <template v-slot:accordion-content>
-                  <p>
-                    Around 2015 my interest in web tech grew and therefore decided to take
-                    my first coding lessions in Html & Javascript on
-                    <a
-                      class="w3c-link"
-                      href="https://www.w3schools.com/"
-                      rel="noreferrer"
-                      target="_blank"
-                      >w3schools website</a
+                <span v-show="contactForm.infoType == 'error'">
+                  <HandleMsg infotype="error" :msg="contactForm.systemErrMsg" />
+                </span>
+                <span v-show="contactForm.infoType == 'success'">
+                  <HandleMsg infotype="success" :msg="contactForm.successMsg" />
+                </span>
+              </section>
+
+              <section
+                v-show="
+                  !contactForm.processing &&
+                  contactForm.systemErrMsg == '' &&
+                  contactForm.successMsg == ''
+                "
+              >
+                <form @submit.prevent="handleContactForm">
+                  <div class="form-group">
+                    <label class="form-label" for="username">Name*</label>
+                    <div class="text-danger small" v-show="contactForm.errors.name != ''">
+                      {{ contactForm.errors.name }}
+                    </div>
+                    <input
+                      v-model="contactForm.formData.name"
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      maxlength="255"
+                      autocomplete="off"
+                      @focus="() => removeError('name')"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="email">Email*</label>
+                    <div
+                      class="text-danger small"
+                      v-show="contactForm.errors.email != ''"
                     >
-                    and ever since I produced the famous <strong>"Hello World"</strong> to
-                    the console of my first application I knew I have found a new hobby.
-                  </p>
-                  <p>
-                    What started as hobby and a simple
-                    <strong>"Hello World"</strong> application has become a full blown
-                    passion of mine as years gone by and has offered me opportunity to
-                    constantly learn and further develope my skills in solving complex
-                    logic behind creating web applications.
-                  </p>
-                </template>
-              </Accordion>
-            </section>
-            <section class="pb-3">
-              <Accordion
-                :key="1"
-                :activeIndex="currentlyActiveIndex"
-                :itemIndex="1"
-                @update:itemIndex="currentlyActiveIndex = $event"
-              >
-                <template v-slot:accordion-trigger> My experience and projects </template>
-                <template v-slot:accordion-content>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p>
-                        Below are a few projects I have completed over the course of
-                        learning to code.
-                      </p>
+                      {{ contactForm.errors.email }}
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="box-shadow project-detail">
-                        <img
-                          src="../../../public/images/adom.jpg"
-                          class="project-img"
-                          alt="Adom Ballons"
-                        />
-                        <p>
-                          Responsive event decoration website for a client to showcase
-                          their work.<br />
-                          <strong>Key features:</strong><br />
-                          <span class="tech-stack-name">Responsive . </span>
-                          <span class="tech-stack-name">
-                            User Registration &amp; Authentication .
-                          </span>
-                          <span class="tech-stack-name"> Admin CRUD . </span>
-                          <span class="tech-stack-name"> Star Rating system</span>
-                          <br />
-                          <strong>Main tech stack:</strong><br />
-                          <span class="tech-stack-name">HTML . </span>
-                          <span class="tech-stack-name"> Scss . </span>
-                          <span class="tech-stack-name"> Javascript . </span>
-                          <span class="tech-stack-name"> Jquery . </span>
-                          <span class="tech-stack-name"> Bootstrap . </span>
-                          <span class="tech-stack-name"> Php . </span>
-                          <span class="tech-stack-name"> Mysql . </span>
-                          <span class="tech-stack-name"> Laravel </span>
-
-                          <span class="source-link-wrapper">
-                            <a
-                              href="https://github.com/icblog/icblog-portfolio"
-                              rel="noreferrer"
-                              target="_blank"
-                              ><strong>Source code</strong></a
-                            ></span
-                          >
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="box-shadow project-detail">
-                        <img
-                          src="../../../public/images/icblog.png"
-                          class="project-img"
-                          alt="Icblog"
-                        />
-                        <p>
-                          This is the site you're browsing. Here, I showcase my skills and
-                          what I know so far with a blog section to give something back to
-                          the online community that has been a huge part of my coding
-                          journey.<br />
-                          <strong>Key features:</strong><br />
-                          <span class="tech-stack-name">Responsive . </span>
-                          <span class="tech-stack-name">
-                            User Registration &amp; Authentication .
-                          </span>
-                          <span class="tech-stack-name"> Admin CRUD . </span>
-
-                          <br />
-                          <strong>Main tech stack:</strong><br />
-
-                          <span class="tech-stack-name">HTML . </span>
-                          <span class="tech-stack-name"> Scss .</span>
-                          <span class="tech-stack-name"> React Js .</span>
-                          <span class="tech-stack-name"> Bootstrap . </span>
-                          <span class="tech-stack-name"> Php . </span>
-                          <span class="tech-stack-name"> Mysql . </span>
-                          <span class="tech-stack-name"> Laravel </span>
-
-                          <span class="source-link-wrapper"
-                            ><a
-                              href="https://github.com/icblog/icblog-portfolio"
-                              rel="noreferrer"
-                              target="_blank"
-                              ><strong>Source code</strong></a
-                            ></span
-                          >
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </template>
-              </Accordion>
-            </section>
-            <section class="pb-3">
-              <Accordion
-                :key="2"
-                :activeIndex="currentlyActiveIndex"
-                :itemIndex="2"
-                @update:itemIndex="currentlyActiveIndex = $event"
-              >
-                <template v-slot:accordion-trigger> What I know so far </template>
-                <template v-slot:accordion-content>
-                  <p>
-                    I'm constantly learning new stack to add onto my skills however, below
-                    are what I'm currently familiar with.
-                  </p>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="box-shadow skill-detail">
-                        <h6 class="skills-heading">Languages</h6>
-                        <div class="all-skill-wrapper">
-                          <span> Html/Html5</span> . <span> Css/Css3/Scss</span> .
-                          <span> JavaScript</span> .
-                          <span> Php</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="box-shadow skill-detail">
-                        <h6 class="skills-heading">Frameworks</h6>
-                        <div class="all-skill-wrapper">
-                          <span>Laravel/Blade</span> . <span> Bootstrap</span> .
-                          <span> Jquery/Ajax</span> . <span> React Js</span> .
-                          <span> Vue Js</span> .
-                          <span> Inertia Js</span>
-                        </div>
-                      </div>
-                    </div>
+                    <input
+                      v-model="contactForm.formData.email"
+                      type="text"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      maxlength="255"
+                      autocomplete="off"
+                      @focus="() => removeError('email')"
+                    />
                   </div>
 
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="box-shadow skill-detail">
-                        <h6 class="skills-heading">Database &amp; Drivers</h6>
-                        <div class="all-skill-wrapper">
-                          <span>Mysql/PhpMyAdmin</span> .
-                          <span> MongoDB</span>
-                        </div>
-                      </div>
+                  <div class="form-group">
+                    <label class="form-label" for="message">Message *</label>
+                    <div
+                      class="text-danger small"
+                      v-show="contactForm.errors.message != ''"
+                    >
+                      {{ contactForm.errors.message }}
                     </div>
-
-                    <div class="col-md-6">
-                      <div class="box-shadow skill-detail">
-                        <h6 class="skills-heading">Tools &amp; Systems</h6>
-                        <div class="all-skill-wrapper">
-                          <span>Npm</span> . <span> Composer</span> .
-                          <span> Git/Github</span> .
-                          <span> VS code</span>
-                        </div>
-                      </div>
-                    </div>
+                    <textarea
+                      v-model="contactForm.formData.message"
+                      class="form-control"
+                      id="message"
+                      maxlength="6000"
+                      autocomplete="off"
+                      @focus="() => removeError('message')"
+                    >
+                    </textarea>
                   </div>
-                </template>
-              </Accordion>
-            </section>
+
+                  <input
+                    v-model="contactForm.formData.myhouse"
+                    type="text"
+                    maxlength="2"
+                    name="myhouse"
+                    class="not_in_my_house"
+                  />
+                  <p class="small">All fields marked with a * are mandatory</p>
+
+                  <div class="pt-3 text-center">
+                    <AppButton btnType="submit" btnStyle="primary">Submit</AppButton>
+                  </div>
+                </form>
+              </section>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </Layout>
 </template>
 
-<script>
+<script setup>
+import { ref, reactive } from "vue";
+import { Carousel, Slide } from "vue-snap";
+import "vue-snap/dist/vue-snap.css";
+import axios from "../api/axios";
 import Layout from "../shared/Layout";
-import Modal from "../shared/Modal.vue";
-import Accordion from "../shared/Accordion.vue";
+import AppButton from "../shared/AppButton";
+import AppLink from "../shared/AppLink";
+import HandleMsg from "../shared/HandleMsg";
+import LoadingIndicator from "../shared/LoadingIndicator";
+import { scrollToElement, returnSystemErrorMsg } from "../helper/util";
 
-export default {
-  components: { Layout, Modal, Accordion },
-  data() {
-    return {
-      currentlyActiveIndex: null,
-    };
+const homeSectionRef = ref(null);
+const aboutSectionRef = ref(null);
+const projectsSectionRef = ref(null);
+const contactSectionRef = ref(null);
+
+const contactForm = reactive({
+  formData: {
+    name: "",
+    email: "",
+    message: "",
+    myhouse: "",
   },
+
+  errors: {
+    name: "",
+    email: "",
+    message: "",
+  },
+  systemErrMsg: "",
+  successMsg: "",
+  infoType: "",
+  processing: false,
+});
+
+const handlePageNav = (clickedNavLink) => {
+  switch (clickedNavLink) {
+    case "home":
+      scrollToElement(homeSectionRef);
+      break;
+    case "about":
+      scrollToElement(aboutSectionRef);
+      break;
+    case "projects":
+      scrollToElement(projectsSectionRef);
+      break;
+    case "contact":
+      scrollToElement(contactSectionRef);
+      break;
+
+    default:
+      scrollToElement(homeSectionRef);
+      break;
+  }
+};
+
+const removeError = (focusedInput) => {
+  if (focusedInput == "name") {
+    if (contactForm.errors.name != "") {
+      contactForm.errors.name = "";
+    }
+  }
+  if (focusedInput == "email") {
+    if (contactForm.errors.email != "") {
+      contactForm.errors.email = "";
+    }
+  }
+
+  if (focusedInput == "message") {
+    if (contactForm.errors.message != "") {
+      contactForm.errors.message = "";
+    }
+  }
+};
+
+const assignErrorMsg = (errorsArr) => {
+  // console.log(errorsArr);
+  errorsArr.forEach((error) => {
+    if (error.indexOf("name") > -1) {
+      contactForm.errors.name = error;
+    }
+    if (error.indexOf("email") > -1) {
+      contactForm.errors.email = error;
+    }
+    if (error.indexOf("message") > -1) {
+      contactForm.errors.message = error;
+    }
+  });
+};
+
+const handleContactForm = () => {
+  let abort = false,
+    errorsArr = [];
+  if (contactForm.formData.name == "") {
+    abort = true;
+    errorsArr.push("The name field is required");
+  }
+  if (contactForm.formData.email == "") {
+    abort = true;
+    errorsArr.push("The email field is required");
+  }
+
+  if (contactForm.formData.message == "") {
+    abort = true;
+    errorsArr.push("The message field is required");
+  }
+
+  if (abort) {
+    handlePageNav("contact");
+    assignErrorMsg(errorsArr);
+  } else {
+    contactForm.processing = true;
+    handlePageNav("contact");
+
+    setTimeout(async () => {
+      try {
+        const res = await axios.post("/handle-contact", contactForm.formData);
+
+        if (res?.data?.errors.length > 0) {
+          //console.log(res?.data?.errors);
+          assignErrorMsg(res?.data?.errors);
+        } else {
+          contactForm.infoType = "success";
+          contactForm.successMsg =
+            "Message sent successfully, I'll get back to you as soon as I can thank you";
+
+          setTimeout(() => {
+            contactForm.infoType = "";
+            contactForm.successMsg = "";
+            contactForm.formData.name = "";
+            contactForm.formData.email = "";
+            contactForm.formData.message = "";
+          }, 6000);
+        }
+      } catch (e) {
+        //console.log(e);
+        contactForm.infoType = "error";
+        contactForm.systemErrMsg = returnSystemErrorMsg();
+      } finally {
+        contactForm.processing = false;
+      }
+    }, 800);
+  } // end if abort
+
+  // router.post("/handle-contact", contactForm, {
+  //   onStart: () => {
+  //     processing.value = true;
+  //   },
+  //   onFinish: () => {
+  //     processing.value = false;
+  //   },
+  // });
 };
 </script>

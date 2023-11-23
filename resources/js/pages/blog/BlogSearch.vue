@@ -68,7 +68,6 @@
             </section>
 
             <section
-              class="blog-search-result"
               v-show="
                 searchData.isSearchComplete &&
                 !searchData.isSearching &&

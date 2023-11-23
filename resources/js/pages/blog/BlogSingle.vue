@@ -2,9 +2,10 @@
   <Layout pageTitle="blog-single">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 pt-4">
           <div class="page-intro-wrapper">
-            <h1>{{ singlePostResult?.title }}</h1>
+            <h3 class="pt-2">{{ singlePostResult?.title }}</h3>
+
             <p v-if="singlePostResult?.createdby_name" class="single-post-author-p">
               By: {{ singlePostResult?.createdby_name }} in
               <span

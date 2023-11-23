@@ -7,15 +7,79 @@
     <AppLink linkUrl="/blog/post/latest" className="header-nav-link"> Blog </AppLink>
   </li>
 
-  <li v-if="$page.component.toLowerCase() != 'contact'">
-    <AppLink linkUrl="/contact" className="header-nav-link"> Contact </AppLink>
+  <li v-show="$page.component.toLowerCase() == 'home'">
+    <AppButton
+      customClass="header-nav-link"
+      :btnFunc="
+        () => {
+          handlePageNav('contact');
+          toggleMenu();
+        }
+      "
+    >
+      Contact
+    </AppButton>
   </li>
-
-  <li v-if="$page.component.toLowerCase() != 'resume'">
-    <AppLink linkUrl="/resume" className="header-nav-link"> Resume </AppLink>
+  <li v-show="$page.component.toLowerCase() == 'home'">
+    <AppButton
+      customClass="header-nav-link"
+      :btnFunc="
+        () => {
+          handlePageNav('projects');
+          toggleMenu();
+        }
+      "
+    >
+      Projects
+    </AppButton>
+  </li>
+  <li v-show="$page.component.toLowerCase() == 'home'">
+    <AppButton
+      customClass="header-nav-link"
+      :btnFunc="
+        () => {
+          handlePageNav('about');
+          toggleMenu();
+        }
+      "
+    >
+      About</AppButton
+    >
+  </li>
+  <li>
+    <AppLink
+      v-if="$page.component.toLowerCase() != 'home'"
+      linkUrl="/"
+      className="header-nav-link"
+    >
+      Home</AppLink
+    >
+    <AppButton
+      v-else
+      customClass="header-nav-link"
+      :btnFunc="
+        () => {
+          handlePageNav('home');
+          toggleMenu();
+        }
+      "
+    >
+      Home</AppButton
+    >
   </li>
 </template>
 
 <script setup>
 import AppLink from "../AppLink";
+import AppButton from "../AppButton";
+const props = defineProps({
+  handlePageNav: {
+    type: Function,
+    default: null,
+  },
+  toggleMenu: {
+    type: Function,
+    default: null,
+  },
+});
 </script>

@@ -3,6 +3,7 @@
   padding: 2rem;
   margin-top: 1rem;
   background-color: $lightGreyColor;
+  border: 0.1rem solid $midGreyColor;
 }
 
 .form-wrapper .primary-btn,
@@ -16,10 +17,7 @@
   color: $darkGreyColor;
 }
 
-.form-wrapper .err-div,
-.form-wrapper-contact-form .err-div-contact-form {
-  display: none;
-}
+
 
 .saveorpublish {
   border: 0.1rem solid $lightGreyColor;
@@ -48,77 +46,81 @@
   /* tada */
 }
 
-.register-stepper {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  position: relative;
-  margin: 0 auto 1.5em;
-
-  &::before {
-    z-index: 0;
-    content: "";
-    display: block;
-    position: absolute;
-    height: 2px;
-    top: calc(50% - 1px);
-    background: $lightGreyColor;
-    width: calc(100% - 20px);
-  }
-}
-
-
-
-
-.step {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  border: 2px solid $lightGreyColor;
-  color: $lightGreyColor;
+.msg-div {
   background-color: $whiteColor;
-  border-radius: 50%;
-  min-width: 25px;
-  min-height: 25px;
-  line-height: 20px;
-  font-size: 16px;
-
-  &-active {
-    color: $primaryColorDark;
-    border-color: $primaryColorDark;
-  }
-
-  &-done {
-    color: $whiteColor;
-    background-color: $primaryColor;
-    border-color: $primaryColor;
-    opacity: 0.8;
-  }
-
-  &-number {
-
-    font-weight: 800;
-    line-height: 1;
-    vertical-align: middle;
-  }
 }
 
-// Transition SLIDE FADE
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
+// .register-stepper {
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+//   position: relative;
+//   margin: 0 auto 1.5em;
 
-.slide-fade-leave-active {
-  display: none;
-  transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
+//   &::before {
+//     z-index: 0;
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     height: 2px;
+//     top: calc(50% - 1px);
+//     background: $lightGreyColor;
+//     width: calc(100% - 20px);
+//   }
+// }
 
-.slide-fade-enter,
-.slide-fade-leave-to {
-  transform: translateX(10px);
-  opacity: 0;
-}
+
+
+
+// .step {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 2;
+//   border: 2px solid $lightGreyColor;
+//   color: $lightGreyColor;
+//   background-color: $whiteColor;
+//   border-radius: 50%;
+//   min-width: 25px;
+//   min-height: 25px;
+//   line-height: 20px;
+//   font-size: 16px;
+
+//   &-active {
+//     color: $primaryColorDark;
+//     border-color: $primaryColorDark;
+//   }
+
+//   &-done {
+//     color: $whiteColor;
+//     background-color: $primaryColor;
+//     border-color: $primaryColor;
+//     opacity: 0.8;
+//   }
+
+//   &-number {
+
+//     font-weight: 800;
+//     line-height: 1;
+//     vertical-align: middle;
+//   }
+// }
+
+// // Transition SLIDE FADE
+// .slide-fade-enter-active {
+//   transition: all .3s ease;
+// }
+
+// .slide-fade-leave-active {
+//   display: none;
+//   transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+// }
+
+// .slide-fade-enter,
+// .slide-fade-leave-to {
+//   transform: translateX(10px);
+//   opacity: 0;
+// }
 
 @media (max-width: 991.98px) {}
 

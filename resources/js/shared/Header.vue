@@ -17,7 +17,7 @@
             >
               <ul>
                 <AdminNav v-if="$page.props.isLoggedIn && $page.props.isAdmin" />
-                <UserNav v-else />
+                <UserNav v-else :handlePageNav="handlePageNav" :toggleMenu="toggleMenu" />
               </ul>
             </div>
             <!-- End middle-content-wrapper -->
@@ -121,6 +121,12 @@ export default {
       isMenuOn: false,
       isSearchOn: false,
     };
+  },
+  props: {
+    handlePageNav: {
+      type: Function,
+      default: null,
+    },
   },
   methods: {
     toggleMenu() {

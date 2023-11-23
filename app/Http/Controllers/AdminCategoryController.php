@@ -20,7 +20,7 @@ use App\Models\PostsXCategory;
 
 class AdminCategoryController extends BaseController{ 
 
-    private $resultPerPage = 2;
+    private $resultPerPage = 15;
 
      public function categoriesIndex(Request $request){
     

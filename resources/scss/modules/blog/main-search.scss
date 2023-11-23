@@ -2,15 +2,21 @@
     background-color: $lightGreyColor;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
-    z-index: 5;
+    z-index: 10;
+
 }
 
 .blog-search-result {
     padding: 1rem;
-    min-height: 30rem;
+    min-height: 20rem;
     background-color: $whiteColor;
     margin-top: 0.2rem;
     overflow-y: scroll;
+    position: absolute;
+    display: block;
+    width: 95%;
+    z-index: 10;
+    border: 0.1rem solid $darkGreyColor;
 }
 
 .blog-search-result a {
@@ -22,6 +28,7 @@
     margin-bottom: 0.5rem;
     padding: 0.8rem 0.6rem;
 
+
     &:hover {
         text-decoration: none;
         background-color: $lightGreyColor;
@@ -31,6 +38,18 @@
 
 @media (max-width: 991.98px) {}
 
-@media (max-width: 767.98px) {}
+@media (max-width: 767.98px) {
 
-@media (max-width: 575.98px) {}
+    .blog-search-result {
+
+        width: 92%;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    .blog-search-result {
+
+        width: 90%;
+    }
+}

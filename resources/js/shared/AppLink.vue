@@ -2,7 +2,7 @@
   <a v-show="linkType === 'ext'" :class="className" :href="linkUrl" target="_blank">
     <slot />
   </a>
-  <Link v-show="linkType === 'int'" :class="className" :href="linkUrl">
+  <Link v-show="linkType === 'int'" :class="className" :href="linkUrl" @click="linkFunc">
     <slot />
   </Link>
 </template>
@@ -24,5 +24,10 @@ const props = defineProps({
     default: "",
     requred: true,
   },
+  linkFunc: {
+    type: Function,
+    default: null,
+  },
+  
 });
 </script>
