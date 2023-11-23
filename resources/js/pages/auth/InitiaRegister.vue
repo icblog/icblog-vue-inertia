@@ -1,14 +1,7 @@
 <template>
   <Layout pageTitle="user-register">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12 pt-5 text-center">
-          <div class="page-intro-wrapper pb-4">
-            <h3 class="pt-2">Register</h3>
-          </div>
-        </div>
-      </div>
-
+      <PageIntro intro="Register" />
       <div class="row">
         <div class="col-md-7 mx-auto">
           <div class="form-wrapper">
@@ -65,6 +58,7 @@ import Layout from "../../shared/Layout";
 import LoadingIndicator from "../../shared/LoadingIndicator";
 import HandleMsg from "../../shared/HandleMsg";
 import AppButton from "../../shared/AppButton";
+import PageIntro from "../../shared/PageIntro";
 import { focusOnFirstInput } from "../../helper/util";
 
 let processing = ref(false),

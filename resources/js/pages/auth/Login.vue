@@ -1,13 +1,7 @@
 <template>
   <Layout pageTitle="user-login">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12 pt-5 text-center">
-          <div class="page-intro-wrapper pb-4">
-            <h3 class="pt-2">Welcome back</h3>
-          </div>
-        </div>
-      </div>
+      <PageIntro intro="Welcome back" />
       <div class="row">
         <div class="col-md-7 mx-auto">
           <div class="form-wrapper">
@@ -80,6 +74,7 @@ import LoadingIndicator from "../../shared/LoadingIndicator";
 import HandleMsg from "../../shared/HandleMsg";
 import { focusOnFirstInput } from "../../helper/util";
 import PasswordInput from "../../shared/PasswordInput";
+import PageIntro from "../../shared/PageIntro";
 import AppButton from "../../shared/AppButton";
 import AppLink from "../../shared/AppLink";
 

@@ -2,9 +2,9 @@
   <Layout pageTitle="notification">
     <div class="container">
       <div class="row">
-        <div class="col-md-7 mx-auto">
-          <div class="page-intro-wrapper text-center">
-            <h1>Information</h1>
+        <div class="col-md-7 mx-auto pt-5">
+          <div class="page-intro-wrapper text-center pb-3">
+            <h3>Information</h3>
           </div>
           <div class="form-wrapper">
             <section>

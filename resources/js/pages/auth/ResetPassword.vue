@@ -1,13 +1,7 @@
 <template>
   <Layout pageTitle="user-reset-password">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12 pt-5 text-center">
-          <div class="page-intro-wrapper pb-4">
-            <h3 class="pt-2">Reset password</h3>
-          </div>
-        </div>
-      </div>
+      <PageIntro intro="Reset password" />
       <div class="row">
         <div class="col-md-7 mx-auto">
           <div class="form-wrapper">
@@ -57,7 +51,7 @@ import LoadingIndicator from "../../shared/LoadingIndicator";
 import HandleMsg from "../../shared/HandleMsg";
 import AppButton from "../../shared/AppButton";
 import PasswordInput from "../../shared/PasswordInput";
-
+import PageIntro from "../../shared/PageIntro";
 let processing = ref(false);
 
 const resetForm = reactive({
