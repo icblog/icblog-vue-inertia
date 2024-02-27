@@ -1,5 +1,5 @@
 <template>
-  <Layout pageTitle="user-register">
+  <Layout :pageTitle="pageTitle">
     <div class="container">
       <PageIntro intro="Register" />
       <div class="row">
@@ -69,7 +69,14 @@ const initiaRegisterForm = reactive({
   myhouse: "",
 });
 
-defineProps({ errors: Object });
+defineProps({ 
+  errors: Object, 
+    pageTitle:{
+    type: String,
+    default: "",
+  }
+
+ });
 
 const handleInitiaRegisterForm = () => {
   router.post("/handle-initia-register", initiaRegisterForm, {

@@ -11,18 +11,24 @@ use App\Models\Category;
 use App\Models\PostsXCategory;
 use App\Models\Postimage;
 use Illuminate\Support\Str;
+use App\Lib\Meta;
 
 class AdminPostController extends BaseController{
 
   private $resultPerPage = 12;
 
    public function createPostIndex(){
+
     $dataToView = array(
       "categoriesResult"=> [],
     );
 
     try{
         $dataToView["categoriesResult"] = Category::fetchCategories();
+        $pageTitle  =  "Admin create post";
+        $dataToView["pageTitle"]= $pageTitle;
+        Meta::addMeta('title', $pageTitle);
+        Meta::addMeta('description', 'Isaac Cobbinah web developer admin create post page');
         return Inertia::render('admin/CreatePost', $dataToView);
 
     }catch(\Exception $e){
@@ -132,7 +138,7 @@ public function getAllPost(Request $request){
   $defaultImgLink = $this->returnCloudinaryDefaultLink();
 
 try{
-   $mainResult = Post::fetchPost(true,1,true,"","");
+   $mainResult = Post::fetchPost(true,12,true,"","");
    
    //dd($mainResult['postResult']);
    
@@ -142,6 +148,10 @@ try{
     "defaultImgLink"=>$defaultImgLink
 
 );
+       $pageTitle  =  "Admin all post";
+        $dataToView["pageTitle"]= $pageTitle;
+        Meta::addMeta('title', $pageTitle);
+        Meta::addMeta('description', 'Isaac Cobbinah web developer admin view all post page');
 
 return Inertia::render('admin/AllPost',$dataToView);
 
@@ -234,7 +244,10 @@ public function updatePostIndex(Request $request){
          if(!empty($categoriesResult)){
           $dataToView["categoriesResult"] = $categoriesResult;
         }
-
+        $pageTitle  =  $singlePostResult["postResult"]->title;
+        $dataToView["pageTitle"]= $pageTitle;
+        Meta::addMeta('title', $pageTitle);
+        Meta::addMeta('description', 'Isaac Cobbinah web developer admin edit post page');
          return Inertia::render('admin/UpdatePost',$dataToView);
       
          } catch (\Exception $e) {

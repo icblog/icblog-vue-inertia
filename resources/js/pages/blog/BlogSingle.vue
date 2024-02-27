@@ -1,5 +1,5 @@
 <template>
-  <Layout pageTitle="blog-single">
+  <Layout :pageTitle="pageTitle">
     <div class="container">
       <div class="row">
         <div class="col-md-12 pt-4">
@@ -130,6 +130,10 @@ const props = defineProps({
   pageIntro: {
     type: String,
     default: "",
+  },
+  pageTitle:{
+    type: String,
+    default:"",
   },
   latestPostResult: {
     type: Object,

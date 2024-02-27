@@ -82,7 +82,7 @@ class Post extends Model{
         return $outComeArray;
     
       } catch (\Exception $e) { 
-        dd($e);
+        //dd($e);
         $outComeArray["error"] = true;
         return $outComeArray;
       }

@@ -1,7 +1,7 @@
 <template>
   <Head>
     <title>
-      {{ appName + " | " + pageTitle }}
+      {{pageTitle}}
     </title>
   </Head>
   <Header :handlePageNav="handlePageNav" />
@@ -10,10 +10,7 @@
   </div>
   <Footer :handlePageNav="handlePageNav" />
 </template>
-<script>
-//appDataObj.appName variable comes from views/app.blade.php
-const appName = appDataObj.appName;
-</script>
+
 <script setup>
 import Header from "./Header";
 import Footer from "./Footer";

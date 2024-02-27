@@ -1,8 +1,10 @@
 <template>
-  <title>
-    {{ appName + " | verify-link" }}
-  </title>
-  <div class="container pb-5">
+   <Head>
+    <title>
+      {{pageTitle}}
+    </title>
+  </Head>
+ <div class="container pb-5">
     <div class="row">
       <div class="col-md-7 mx-auto">
         <div class="text-center pt-5 pb-3">
@@ -16,19 +18,22 @@
     </div>
   </div>
 </template>
-<script>
-//appDataObj.appName variable comes from views/app.blade.php
-const appName = appDataObj.appName;
-</script>
+
 <script setup>
 import { ref, onMounted } from "vue";
-import { router } from "@inertiajs/vue3";
+import { router,Head } from "@inertiajs/vue3";
 import LoadingIndicator from "../../shared/LoadingIndicator";
 import Logo from "../../shared/Logo";
 
 let processing = ref(true);
 
-defineProps({ errors: Object });
+defineProps({ 
+  errors: Object,
+  pageTitle:{
+    type: String,
+    default: "",
+  }
+ });
 
 const handleVerifyLink = () => {
   setTimeout(() => {

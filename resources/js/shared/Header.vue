@@ -1,5 +1,5 @@
 <template>
-  <header id="main-header">
+  <header :class="isHeaderFixed ? 'header-fix' : ''">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -120,6 +120,7 @@ export default {
     return {
       isMenuOn: false,
       isSearchOn: false,
+      isHeaderFixed: false,
     };
   },
   props: {
@@ -142,6 +143,19 @@ export default {
         this.isMenuOn = false;
       }
     },
+    handleHeaderFixed() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        this.isHeaderFixed = true;
+      } else {
+        this.isHeaderFixed = false;
+      }
+    },
+  },
+  created() {
+    window.addEventListener("scroll", this.handleHeaderFixed);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleHeaderFixed);
   },
 };
 </script>

@@ -6,8 +6,10 @@ use App\Traits\TokenTrait;
 use App\Models\User;
 use App\Lib\Cloudinary;
 
+
+
 class BaseController extends Controller{
-   
+
     use HelperTrait;
     use TokenTrait;
      //METHODS USED FROM HelperTrait
@@ -15,6 +17,8 @@ class BaseController extends Controller{
     
    public $linkExpireTime = 2400;//(40mins)
 
+  
+ 
 public function cloudinaryInstance(){
       $cloudinary = new Cloudinary();
       return  $cloudinary;

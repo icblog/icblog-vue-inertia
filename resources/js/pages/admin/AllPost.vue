@@ -1,5 +1,5 @@
 <template>
-  <Layout pageTitle="admin-all-post">
+  <Layout :pageTitle="pageTitle">
     <div class="container">
       <div class="row">
         <div class="col-md-12 pt-5">
@@ -195,6 +195,10 @@ export default {
       default: {},
     },
     pageIntro: {
+      type: String,
+      default: "",
+    },
+    pageTitle: {
       type: String,
       default: "",
     },

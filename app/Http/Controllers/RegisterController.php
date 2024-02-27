@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Lib\Meta;
 
 class RegisterController extends BaseController{
 
@@ -68,14 +69,21 @@ private function setRegisterLinkSession($redirectReason,$request,$redirectUrl="/
     
     
     public function index(){
-        
-        return Inertia::render('auth/InitiaRegister');
+      $pageTitle  =  "Registration";
+      $dataToView = array("pageTitle"=>$pageTitle);
+      Meta::addMeta('title', $pageTitle);
+      Meta::addMeta('description', 'Isaac Cobbinah web developer registration page');
+        return Inertia::render('auth/InitiaRegister', $dataToView);
         
     }// end index
 
 
   public function completeRegister(){
-    return Inertia::render('auth/CompleteRegister');
+     $pageTitle  =  "Complete registration";
+      $dataToView = array("pageTitle"=>$pageTitle);
+      Meta::addMeta('title', $pageTitle);
+      Meta::addMeta('description', 'Isaac Cobbinah web developer complete registration page');
+    return Inertia::render('auth/CompleteRegister', $dataToView);
       
   }// end index
 

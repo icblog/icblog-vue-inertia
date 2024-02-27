@@ -3,29 +3,24 @@
 	margin: 0;
 	//margin-top: -1.5rem;
 	position: relative;
+
 }
 
 .logo-wrapper a {
 	text-decoration: none;
 	font-family: $logoFont;
-	padding: 0;
+	padding: 0.2rem 0.6rem;
 	margin: 0;
-	font-size: 1.3rem;
-	color: $blackColor !important;
+	font-size: 1.5rem;
+	color: $whiteColor !important;
+	background-color: $primaryColor;
 
 	&:hover {
 		text-decoration: none;
 	}
 }
 
-.logo-wrapper .logo-dot {
-	font-weight: bolder;
-	color: $primaryColor !important;
-	font-size: 4rem;
-	position: absolute;
-	left: 3.8rem;
-	top: -3.5rem;
-}
+
 
 
 

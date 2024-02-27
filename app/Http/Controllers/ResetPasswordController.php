@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Lib\Meta;
 
 
 class ResetPasswordController extends BaseController{
@@ -51,8 +52,11 @@ private function setResetPasswordLinkSession($redirectReason,$request,$redirectU
     
 
 public function index(Request $request){
-      
-        return Inertia::render('auth/ResetPassword');
+  $pageTitle  =  "Reset password";
+  $dataToView = array("pageTitle"=>$pageTitle);
+  Meta::addMeta('title', $pageTitle);
+  Meta::addMeta('description', 'Isaac Cobbinah web developer reset password page');
+        return Inertia::render('auth/ResetPassword', $dataToView);
 }// end index
   
     public function update(Request $request){

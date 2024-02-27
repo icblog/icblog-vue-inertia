@@ -11,6 +11,7 @@ use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Reply;
 use App\Lib\BadWords;
+use App\Lib\Meta;
 use App\Models\User;
 
 
@@ -42,9 +43,9 @@ class BlogController extends BaseController{
      try{
 
          //Fetch latest 6 post and pass to home view
-          $latestPostResult = Post::fetchLatestPost($this->resultPerPage, $paginate);
+          $latestPostResult = Post::fetchLatestPost(6, $paginate);
      
-          $popularPostResult = Post::fetchPopularPost($this->resultPerPage, $paginate);
+          $popularPostResult = Post::fetchPopularPost(6, $paginate);
          //Fetch all categories
           $categoriesResult = Category::fetchCategoriesWithCount();
      
@@ -64,8 +65,9 @@ class BlogController extends BaseController{
     }else{
         return redirect()->route('home.index'); 
     }
-
+   
      $dataToView = array(
+      "pageTitle"=>$pageIntro,
         "pageIntro"=> $pageIntro,
         "latestPostResult"=> $latestPostResult['postResult'],
         "popularPostResult"=> $popularPostResult['postResult'],
@@ -76,6 +78,9 @@ class BlogController extends BaseController{
         "defaultImgLink"=>$defaultImgLink
 
      );
+     
+     Meta::addMeta('title', $pageIntro);
+     Meta::addMeta('description', 'Isaac Cobbinah web developer blog home page');
 
      return Inertia::render('blog/BlogHome',$dataToView);
 
@@ -170,6 +175,10 @@ class BlogController extends BaseController{
         if(!($categoriesResult["error"])){
             $dataToView["categoriesResult"] = $categoriesResult["result"];
         }
+        $pageTitle  =  $singlePostResult["postResult"]->title;
+        $dataToView['pageTitle'] = $pageTitle;
+        Meta::addMeta('title', $pageTitle);
+        Meta::addMeta('description', 'Isaac Cobbinah web developer blog post detail page');
         
         return Inertia::render('blog/BlogSingle',$dataToView);
 

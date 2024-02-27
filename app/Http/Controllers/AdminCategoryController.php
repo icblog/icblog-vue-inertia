@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\PostsXCategory;
+use App\Lib\Meta;
 
 
 //METHODS USED FROM BASE CONTROLLER CLASS WHICH THIS CLASS EXTENDS
@@ -30,8 +31,13 @@ class AdminCategoryController extends BaseController{
         ->route('admin.categoriesIndex')
         ->withErrors(["fail"=> $this->returnGenericSystemErrMsg()]);
         }else{
-
-            return Inertia::render('admin/Categories', ["categoriesResult"=>$categoriesResult]);
+    $pageTitle  =  "Admin view categories";
+     Meta::addMeta('title', $pageTitle);
+    Meta::addMeta('description', 'Isaac Cobbinah web developer admin view categories page');
+            return Inertia::render('admin/Categories', [
+              "categoriesResult" => $categoriesResult,
+              "pageTitle" => $pageTitle
+            ]);
         }
     }//End categoriesIndex
   

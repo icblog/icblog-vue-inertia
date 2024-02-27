@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 use Illuminate\Http\Request;
-
+use App\Lib\Meta;
 
 class NotificationController extends Controller{
 
@@ -37,15 +37,20 @@ class NotificationController extends Controller{
           return redirect("/");
         }
 
-        return Inertia::render('Notification', [
-            "msgData" => [
+        
+        $pageTitle  =  "Notification";
+        $dataToView = array(
+          "pageTitle"=>$pageTitle,
+          "msgData" => [
             "redirectLink"=> $redirectLink,
             "type"=> $type,
             "msg" => $msg,
             "redirectTime"=> $redirectTime
             ]
-              
-        ]);
+        );
+        Meta::addMeta('title', $pageTitle);
+        Meta::addMeta('description', 'Isaac Cobbinah web developer notification page');
+        return Inertia::render('Notification', $dataToView);
     }//End index
 
    

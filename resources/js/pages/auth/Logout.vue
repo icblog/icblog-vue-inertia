@@ -1,5 +1,5 @@
 <template>
-  <Layout pageTitle="user-logout">
+  <Layout :pageTitle="pageTitle">
     <div class="container">
       <PageIntro intro="Logout" />
       <div class="row">
@@ -22,7 +22,13 @@ import LoadingIndicator from "../../shared/LoadingIndicator";
 
 let processing = ref(true);
 
-defineProps({ errors: Object });
+defineProps({ 
+  errors: Object, 
+  pageTitle:{
+  type: String,
+  default: "",
+  } 
+});
 
 const handleLogout = () => {
   setTimeout(() => {

@@ -1,5 +1,5 @@
 <template>
-  <Layout pageTitle="user-login">
+  <Layout :pageTitle="pageTitle">
     <div class="container">
       <PageIntro intro="Welcome back" />
       <div class="row">
@@ -87,7 +87,13 @@ const loginForm = reactive({
   myhouse: "",
 });
 
-defineProps({ errors: Object });
+defineProps({ 
+  errors: Object,
+  pageTitle: {
+    type: String,
+    default: "",
+  },
+ });
 
 const handleLoginForm = () => {
   router.post("/handle-login-form", loginForm, {

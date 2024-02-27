@@ -6,13 +6,18 @@ use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use App\Lib\Meta;
 use App\Models\User;
 
 
 class LoginController extends BaseController{
 
   public function index(){
-      return Inertia::render('auth/Login');
+    $pageTitle  =  "Login";
+    $dataToView = array("pageTitle"=>$pageTitle);
+    Meta::addMeta('title', $pageTitle);
+    Meta::addMeta('description', 'Isaac Cobbinah web developer login page');
+      return Inertia::render('auth/Login',$dataToView);
         
    }//End index
 

@@ -1,13 +1,22 @@
 <template>
-  <Layout pageTitle="home" :handlePageNav="handlePageNav">
+  <Layout :pageTitle="pageTitle" :handlePageNav="handlePageNav">
     <section ref="homeSectionRef" class="home-section-wrapper section-wrapper">
       <div class="container">
         <div class="row pt-5">
           <div class="col-md-9 mx-auto text-center pt-5">
+            <div class="row">
+              <!-- <div class="col-md-6 mx-auto">
+                <img
+                  src="../../../public/images/ic-avatar.jpg"
+                  class="ic-avatar-img"
+                  alt="Isaac profile image"
+                />
+              </div> -->
+            </div>
             <h2>Hi, I'm Isaac Cobbinah.</h2>
             <p class="mb-4">
-              Highly motivated self-taught full-stack php web developer with a focus on
-              responsive and minimalist web applications.
+              I'm self-taught full-stack php web developer with genuine passion for
+              coding.
             </p>
             <AppButton
               customClass="primary-btn pl-5 pr-5"
@@ -23,18 +32,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-9 mx-auto text-center">
-            <h2 class="section-h2">About me</h2>
-            <p>
-              Read more about me below including my skills, web stack evolves therefore
-              I'm constantly learning and improving my skills. I love solving problems
-              with web tech so don't hesitate to contact if you have a project that match
-              my skills.
-            </p>
+            <h2 class="section-h2 pb-5">About me</h2>
           </div>
-        </div>
-        <div class="row pt-5">
           <div class="col-md-6 pr-4">
-            <h5 class="pb-3 pt-2">Get to know me!</h5>
+            <h5 class="pb-3 pt-2">How I started</h5>
             <p>
               Around 2015 my interest in web tech grew and therefore decided to take my
               first coding lessions in Html & Javascript on
@@ -52,8 +53,7 @@
               What started as hobby and a simple
               <strong>"Hello World"</strong> application has become a full blown passion
               of mine as years gone by and has offered me opportunity to constantly learn
-              and further develope my skills in solving complex logic behind creating web
-              applications.
+              and further develope my skills in solving web application problems.
             </p>
             <AppButton
               customClass="primary-btn pl-5 pr-5"
@@ -63,6 +63,10 @@
           </div>
           <div class="col-md-6 pl-4">
             <h5 class="pb-3 pt-2">My Skills</h5>
+            <p>
+              Web stack evolves therefore I'm constantly learning and improving my skills,
+              below are what I'm currently familiar with.
+            </p>
 
             <div class="skill-detail">
               <p class="skills-heading">Languages</p>
@@ -79,7 +83,7 @@
               <div class="all-skill-wrapper">
                 <span>Laravel/Blade</span>
                 <span>Bootstrap</span>
-                <span> Jquery/Ajax</span>
+                <span> JQuery/Ajax</span>
                 <!-- <span>React Js</span> -->
                 <span>Vue Js</span>
                 <span>Inertia Js</span>
@@ -106,12 +110,45 @@
           <div class="col-md-9 mx-auto text-center mb-3">
             <h2 class="section-h2">Projects</h2>
             <p>
-              Below are a few personal and clients projects I have completed over the
-              course of my coding journey.
+              Below are a few personal projects I have completed over the course of my
+              coding journey.
             </p>
           </div>
         </div>
         <carousel class="story-carousel story-carousel--colors" :hideArrowsOnBound="true">
+          <slide class="story-carousel__slide">
+            <div class="row pb-4">
+              <div class="col-md-8">
+                <img
+                  src="../../../public/images/adom-balloons.png"
+                  class="projects__row-img"
+                  alt="Adom balloons project image"
+                />
+              </div>
+              <div class="col-md-4">
+                <h5 class="pb-3 pt-2">Adom balloons</h5>
+                <p>
+                  I volunteered and built this application to help small business that
+                  offer event decoration services. Not only it did help improve my web
+                  development skills but made a real difference also to the start up.
+                </p>
+                <span class="mr-4"
+                  ><AppLink linkType="ext" linkUrl="https://adomballoons.icblog.uk/"
+                    >Live</AppLink
+                  ></span
+                >
+                <span
+                  ><AppLink
+                    linkType="ext"
+                    linkUrl="https://github.com/icblog/Adom-laravel"
+                    >Source code</AppLink
+                  ></span
+                >
+              </div>
+            </div>
+            <!-- end project -->
+          </slide>
+
           <slide class="story-carousel__slide">
             <div class="row pb-4">
               <div class="col-md-8">
@@ -125,9 +162,9 @@
                 <h5 class="pb-3 pt-2">Ic visitors</h5>
                 <p>
                   This application was inspired by a visitors sign in and out system in my
-                  work place that needed some improvements. I created a demo sign in and
-                  out from scratch to show the technical team, my line manager how the
-                  current system could be improved.
+                  current work place that needed some improvements. I created a demo
+                  version from scratch to show the development team and my line manager
+                  how to improve it.
                 </p>
                 <span class="mr-4"
                   ><AppLink linkType="ext" linkUrl="https://iv.icblog.uk/"
@@ -159,7 +196,7 @@
                   fictional Ic company app.
                 </p>
                 <span class="mr-4"
-                  ><AppLink linkType="ext" linkUrl="https://xyzadmin.icblog.uk/"
+                  ><AppLink linkType="ext" linkUrl="https://icadmin.icblog.uk/"
                     >Live</AppLink
                   ></span
                 >
@@ -334,7 +371,12 @@ const homeSectionRef = ref(null);
 const aboutSectionRef = ref(null);
 const projectsSectionRef = ref(null);
 const contactSectionRef = ref(null);
-
+defineProps({
+  pageTitle: {
+    type: String,
+    default: "",
+  },
+});
 const contactForm = reactive({
   formData: {
     name: "",

@@ -6,6 +6,7 @@ use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use App\Lib\Meta;
 
 class VerifyController extends BaseController{
     //METHODS USED FROM HELPER TRAIT FROM BASE CONTROLLER CLASS WHICH THIS CLASS EXTENDS
@@ -54,8 +55,12 @@ public function index(Request $request){
 
          $request->session()->put('action', $action);
          $request->session()->put('tk', $tk);
-        
-         return Inertia::render('auth/Verify');
+         
+         $pageTitle  =  "Verification";
+         $dataToView = array("pageTitle"=>$pageTitle);
+          Meta::addMeta('title', $pageTitle);
+          Meta::addMeta('description', 'Isaac Cobbinah web developer verification page');
+         return Inertia::render('auth/Verify', $dataToView);
        
   }
 

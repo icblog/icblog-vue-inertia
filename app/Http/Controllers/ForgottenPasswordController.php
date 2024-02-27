@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Lib\Meta;
 use App\Models\User;
 
 class ForgottenPasswordController extends BaseController{
@@ -13,7 +14,11 @@ class ForgottenPasswordController extends BaseController{
 //genarateToken
 
   public function index(){
-    return Inertia::render('auth/ForgottenPassword');
+    $pageTitle  =  "Forgotten password";
+    $dataToView = array("pageTitle"=>$pageTitle);
+    Meta::addMeta('title', $pageTitle);
+    Meta::addMeta('description', 'Isaac Cobbinah web developer forgotten password page');
+    return Inertia::render('auth/ForgottenPassword', $dataToView);
         
     }//End index
 

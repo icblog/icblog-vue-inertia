@@ -1,5 +1,5 @@
 <template>
-  <Layout pageTitle="user-forgotten-password">
+  <Layout :pageTitle="pageTitle">
     <div class="container">
       <PageIntro intro="Forgotten password" />
 
@@ -71,7 +71,13 @@ const forgottenPasswordForm = reactive({
   myhouse: "",
 });
 
-defineProps({ errors: Object });
+defineProps({ 
+  errors: Object,
+  pageTitle:{
+    type: String,
+    default: "",
+  }
+ });
 
 const handleLoginForm = () => {
   router.post("/handle-forgotten-password-form", forgottenPasswordForm, {

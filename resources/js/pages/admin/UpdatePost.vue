@@ -1,5 +1,5 @@
 <template>
-  <Layout pageTitle="admin-update-post">
+  <Layout :pageTitle="pageTitle">
     <div class="container">
       <div class="row">
         <div class="col-md-10 mx-auto pt-5">
@@ -119,6 +119,10 @@ const props = defineProps({
   categoriesResult: {
     type: Object,
     default: {},
+  },
+  pageTitle:{
+    type: String,
+    default: "",
   },
 
   singlePostResult: {

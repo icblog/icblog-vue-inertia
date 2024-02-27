@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Lib\Meta;
 
 
 class LogOutController extends BaseController{
 
     public function index(){
-        return Inertia::render('auth/Logout');
+      $pageTitle  =  "Logout";
+      $dataToView = array("pageTitle"=>$pageTitle);
+      Meta::addMeta('title', $pageTitle);
+      Meta::addMeta('description', 'Isaac Cobbinah web developer logout page');
+        return Inertia::render('auth/Logout',$dataToView);
     }//End index
 
     public function handleLogout(Request $request){

@@ -1,5 +1,5 @@
 <template>
-  <Layout pageTitle="notification">
+  <Layout :pageTitle="pageTitle">
     <div class="container">
       <div class="row">
         <div class="col-md-7 mx-auto pt-5">
@@ -38,7 +38,14 @@ import { router } from "@inertiajs/vue3";
 import Layout from "../shared/Layout";
 import HandleMsg from "../shared/HandleMsg";
 
-const props = defineProps({ msgData: Object });
+const props = defineProps({ 
+  msgData: Object,
+  pageTitle: {
+      type: String,
+      default: "",
+    },
+
+ });
 
 onMounted(() => {
   if (props.msgData.redirectLink != "") {

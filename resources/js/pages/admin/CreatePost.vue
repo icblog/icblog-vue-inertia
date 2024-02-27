@@ -1,5 +1,5 @@
 <template>
-  <Layout pageTitle="admin-create-post">
+  <Layout :pageTitle="pageTitle">
     <div class="container">
       <div class="row">
         <div class="col-md-10 mx-auto pt-5">
@@ -110,14 +110,14 @@
 <script setup>
 import { reactive, ref, onMounted } from "vue";
 import { router } from "@inertiajs/vue3";
-import AppButton from "../../shared/AppButton.vue";
-import AppLink from "../../shared/AppLink.vue";
+import AppButton from "../../shared/AppButton";
+import AppLink from "../../shared/AppLink";
 import Layout from "../../shared/Layout";
 import LoadingIndicator from "../../shared/LoadingIndicator.vue";
-import HandleMsg from "../../shared/HandleMsg.vue";
-import PostBody from "./PostBody.vue";
-import MultiSelect from "./MultiSelect.vue";
-import FileUpload from "./FileUpload.vue";
+import HandleMsg from "../../shared/HandleMsg";
+import PostBody from "./PostBody";
+import MultiSelect from "./MultiSelect";
+import FileUpload from "./FileUpload";
 import { focusOnFirstInput } from "../../helper/util";
 
 let firstInput = ref(null);
@@ -128,6 +128,10 @@ const props = defineProps({
     type: Object,
     default: {},
   },
+  pageTitle:{
+    type: String,
+    default: "",
+  }
 });
 
 const createPostFormData = reactive({

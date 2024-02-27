@@ -1,5 +1,5 @@
 <template>
-  <Layout pageTitle="user-complete-register">
+  <Layout :pageTitle="pageTitle">
     <div class="container">
       <PageIntro intro="Complete your account" />
       <div class="row">
@@ -79,7 +79,13 @@ const completeRegisterForm = reactive({
   username: "",
 });
 
-defineProps({ errors: Object });
+defineProps({ 
+  errors: Object,
+  pageTitle:{
+    type: String,
+    default: "",
+  }
+ });
 
 const handleCompleteRegisterForm = () => {
   router.post("/handle-complete-register", completeRegisterForm, {

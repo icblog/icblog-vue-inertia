@@ -1,5 +1,5 @@
 <template>
-  <Layout pageTitle="admin-dashboard">
+  <Layout :pageTitle="pageTitle">
     <div class="container">
       <PageIntro intro="Dashboard" />
       <div class="row pt-5">
@@ -37,4 +37,11 @@
 import AppLink from "../../shared/AppLink.vue";
 import Layout from "../../shared/Layout";
 import PageIntro from "../../shared/PageIntro";
+
+defineProps({
+  pageTitle: {
+    type: String,
+    default: "",
+  },
+});
 </script>
