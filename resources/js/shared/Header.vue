@@ -23,23 +23,6 @@
             <!-- End middle-content-wrapper -->
             <div class="right-content-wrapper">
               <ul>
-                <li
-                  v-if="
-                    $page.component.toLowerCase() == 'blog/bloghome' ||
-                    $page.component.toLowerCase() == 'blog/blogsingle'
-                  "
-                >
-                  <AppButton
-                    :btnTitle="isSearchOn ? 'Close search' : 'Search'"
-                    customClass="search-btn"
-                    :btnFunc="toggleSearch"
-                  >
-                    <span
-                      ><i :class="isSearchOn ? 'fa fa-times' : 'fa fa-search'"></i
-                    ></span>
-                  </AppButton>
-                </li>
-
                 <li>
                   <AppButton
                     :btnTitle="isMenuOn ? 'Close menu' : 'Open menu'"
@@ -88,24 +71,14 @@
       <!-- END ROW -->
     </div>
     <!-- END CONTAINER -->
-    <!-- Blog main search form -->
-
-    <BlogSearch
-      v-show="
-        (isSearchOn && $page.component.toLowerCase() == 'blog/bloghome') ||
-        (isSearchOn && $page.component.toLowerCase() == 'blog/blogsingle')
-      "
-      :isSearchOn="isSearchOn"
-    />
   </header>
 </template>
 <script>
-import AppLink from "./AppLink.vue";
+import AppLink from "./AppLink";
 import Logo from "./Logo";
 import UserNav from "./nav/UserNav";
 import AdminNav from "./nav/AdminNav";
-import BlogSearch from "../pages/blog/BlogSearch.vue";
-import AppButton from "./AppButton.vue";
+import AppButton from "./AppButton";
 
 export default {
   components: {
@@ -113,13 +86,11 @@ export default {
     Logo,
     UserNav,
     AdminNav,
-    BlogSearch,
     AppButton,
   },
   data() {
     return {
       isMenuOn: false,
-      isSearchOn: false,
       isHeaderFixed: false,
     };
   },
@@ -132,16 +103,6 @@ export default {
   methods: {
     toggleMenu() {
       this.isMenuOn = !this.isMenuOn;
-      if (this.isSearchOn) {
-        this.isSearchOn = false;
-      }
-    },
-
-    toggleSearch() {
-      this.isSearchOn = !this.isSearchOn;
-      if (this.isMenuOn) {
-        this.isMenuOn = false;
-      }
     },
     handleHeaderFixed() {
       if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {

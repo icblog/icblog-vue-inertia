@@ -4,7 +4,7 @@
   </li>
 
   <li v-if="$page.component.toLowerCase() != 'blog/bloghome'">
-    <AppLink linkUrl="/blog/post/latest" className="header-nav-link"> Blog </AppLink>
+    <AppLink linkUrl="/blog/post/all" className="header-nav-link"> Blog </AppLink>
   </li>
 
   <li v-show="$page.component.toLowerCase() == 'home'">

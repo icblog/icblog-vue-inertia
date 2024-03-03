@@ -17,6 +17,9 @@
 @import "modules/app-accordion";
 @import "modules/app-modal";
 @import "modules/home";
+@import "modules/option-element-input";
+@import "modules/multi-select";
+@import "modules/local-search";
 
 //Blog styles
 @import "modules/blog/main-search";
@@ -24,6 +27,7 @@
 @import "modules/blog/blog-single";
 @import "modules/blog/blog-side-bar";
 @import "modules/blog/blog-comments";
+@import "modules/blog/blog-categories";
 
 // Admin Styles
 @import "modules/admin/util";

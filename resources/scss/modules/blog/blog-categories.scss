@@ -1,0 +1,41 @@
+.blog-categories-wrapper {
+    width: 35%;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    display: block;
+
+}
+
+.sort-wrapper {
+    width: 20%;
+}
+
+@media (max-width: 991.98px) {
+
+    .blog-categories-wrapper {
+        width: 60%;
+    }
+
+    .hide-categories-wrapper {
+        display: none;
+    }
+
+    .hide-sort-wrapper {
+        display: none;
+    }
+
+    .sort-wrapper {
+        padding-right: 1rem;
+        width: 32%;
+    }
+}
+
+@media (max-width: 767.98px) {}
+
+@media (max-width: 575.98px) {
+    .blog-categories-wrapper {
+        width: 55%;
+    }
+
+
+}

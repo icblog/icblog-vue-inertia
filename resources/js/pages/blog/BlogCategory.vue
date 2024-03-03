@@ -26,7 +26,7 @@
             :allowSearch="false"
             :disabledInput="true"
             customWrapperClass="sort-blog-post-wrapper"
-            :defaultOptionSelected="sort"
+            :defaultOptionSelected="sort_array[0]"
             @updateSelectedOptionInput="updateSortSelected"
           />
         </div>
@@ -42,7 +42,6 @@
               $page.component.toLowerCase() == 'blog/blogsingle'
             "
             :isSearchOn="true"
-            @updateSelectedCategory="updateSelectedCategory"
           />
         </div>
         <div class="blog-search-btn-wrapper">
@@ -124,18 +123,18 @@
                           :key="i"
                           class="post-entry-category-link-span"
                         >
-                          <!-- <span
+                          <span
                             class="blog-details-span-link"
                             @click="() => updateSelectedCategory(categoryEntry)"
                           >
                             {{ categoryEntry }}
-                          </span> -->
-                          <AppLink
+                          </span>
+                          <!-- <AppLink
                             :linkUrl="`/blog/category/${
                               returnPostEntryCatLinkArray(postEntry).catSlugArray[i]
-                            }/latest`"
+                            }`"
                             >{{ categoryEntry }}</AppLink
-                          > </span
+                          >  --> </span
                         ><br />
                         <strong>Views:</strong> {{ postEntry.views }}
                       </p>
@@ -212,10 +211,6 @@ export default {
       type: String,
       default: "",
     },
-    sort: {
-      type: String,
-      default: "latest",
-    },
     defaultImgLink: {
       type: String,
       default: "",
@@ -229,8 +224,7 @@ export default {
       isPaginating: false,
       is_sorting: false,
       action: "post",
-      slug: "all",
-      sort: "latest",
+      slug: "latest",
       mainPostResult: this.mainResult?.data,
       initialUrl: this.$page.url,
     };
@@ -244,8 +238,8 @@ export default {
 
     sortPost() {
       router.post(
-        `/blog/${this.action}/${this.slug}`,
-        { action: this.action, slug: this.slug, sort: this.sort },
+        "/blog",
+        { action: this.action, slug: this.slug },
         {
           onStart: () => {
             this.is_sorting = true;
@@ -255,11 +249,7 @@ export default {
           },
           onSuccess: () => {
             this.mainPostResult = this.mainResult?.data;
-            window.history.replaceState(
-              {},
-              this.$page.title,
-              `/blog/${this.action}/${this.slug}`
-            );
+            window.history.replaceState({}, this.$page.title, this.initialUrl);
           },
         }
       );
@@ -291,12 +281,12 @@ export default {
     },
     updateSelectedCategory(selected_category) {
       this.action = "category";
-      this.sort = "latest";
       this.slug = selected_category;
       this.sortPost();
     },
     updateSortSelected(selected_sort) {
-      this.sort = selected_sort;
+      this.action = "post";
+      this.slug = selected_sort;
       this.sortPost();
     },
     returnPostEntryCatLinkArray(postEntry) {

@@ -2,6 +2,10 @@ export const isObject = (obj) => {
   return Object.prototype.toString.call(obj) === "[object Object]";
 };
 
+export function returnAllStrAfterFirstChar(str, char = " ") {
+  return str.slice(str.indexOf(char) + 1);
+}
+
 export const isArray = (what) => {
   return Object.prototype.toString.call(what) === "[object Array]";
 };

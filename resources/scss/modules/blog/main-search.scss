@@ -1,25 +1,47 @@
 .blog-search-wrapper {
-    background-color: $lightGreyColor;
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
-    z-index: 10;
+    width: 45%;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
 
+}
+
+.main-search-input {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+}
+
+.blog-searh-inner-wrapper {
+    position: relative;
+}
+
+.local-search-icon-clear {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.blog-search-btn-wrapper {
+    display: none;
 }
 
 .blog-search-result {
     padding: 1rem;
     min-height: 20rem;
     background-color: $whiteColor;
-    margin-top: 0.2rem;
+    margin-top: 0;
     overflow-y: scroll;
     position: absolute;
     display: block;
-    width: 95%;
+    width: 100%;
     z-index: 10;
     border: 0.1rem solid $darkGreyColor;
+    border-top: none;
 }
 
-.blog-search-result a {
+.blog-search-result a,
+.blog-search-result .search-res-category-span {
     display: block;
     width: 100%;
     color: $baseColor;
@@ -27,7 +49,8 @@
     background-color: $lighterGreyColor;
     margin-bottom: 0.5rem;
     padding: 0.8rem 0.6rem;
-
+    font-weight: bold;
+    cursor: pointer;
 
     &:hover {
         text-decoration: none;
@@ -36,20 +59,46 @@
     }
 }
 
-@media (max-width: 991.98px) {}
-
-@media (max-width: 767.98px) {
-
-    .blog-search-result {
-
-        width: 92%;
+@media (max-width: 991.98px) {
+    .blog-search-wrapper {
+        display: none;
     }
+
+    .show-search-bar {
+        display: block;
+        width: 92% !important;
+    }
+
+    .blog-search-btn-wrapper {
+        display: block;
+        width: 8%;
+
+    }
+
+    .blog-search-btn-wrapper .btn {
+        padding-top: 0.3rem;
+        padding-bottom: 0.4rem;
+    }
+
 }
 
+@media (max-width: 767.98px) {}
+
 @media (max-width: 575.98px) {
-
-    .blog-search-result {
-
-        width: 90%;
+    .show-search-bar {
+        width: 85% !important;
     }
+
+    .blog-search-btn-wrapper {
+        padding-left: 0;
+        margin-right: 0.3rem;
+        width: 10%;
+    }
+
+    .blog-search-btn-wrapper .btn {
+        padding-top: 0.4rem;
+        padding-bottom: 0.6rem;
+    }
+
+
 }

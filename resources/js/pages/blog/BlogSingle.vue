@@ -2,13 +2,13 @@
   <Layout :pageTitle="pageTitle">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 pt-4">
+        <div class="col-md-10 mx-auto pt-4 pl-4">
           <div class="page-intro-wrapper">
             <h3 class="pt-2">{{ singlePostResult?.title }}</h3>
 
             <p v-if="singlePostResult?.createdby_name" class="single-post-author-p">
-              By: {{ singlePostResult?.createdby_name }} in
-              <span
+              By: {{ singlePostResult?.createdby_name }}
+              <!-- <span
                 v-if="singlePostResult != null"
                 v-for="(categoryName, i) in singlePostResult.catNames"
                 :key="i"
@@ -17,19 +17,19 @@
                 <AppLink :linkUrl="`/blog/category/${singlePostResult.catSlugs[i]}`">{{
                   categoryName
                 }}</AppLink>
-              </span>
+              </span> -->
               on {{ singlePostResult?.created_at }}
             </p>
           </div>
         </div>
       </div>
       <div v-if="errors.fail" class="row">
-        <div class="col-md-12">
+        <div class="col-md-10 mx-auto">
           <HandleMsg infotype="error" :msg="errors.fail" />
         </div>
       </div>
       <div v-else class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 mt-2 mb-3">
+        <div class="col-md-10 mt-2 mb-3 mx-auto">
           <div v-if="singlePostResult != null" class="post-wrapper pt-2">
             <Markdown :source="singlePostResult?.body" />
           </div>
@@ -97,16 +97,6 @@
             </section>
           </div>
         </div>
-
-        <!-- SideBar -->
-        <BlogSideBar
-          :requestSlug="urlSlug"
-          :categoriesResult="categoriesResult"
-          :latestPostResult="latestPostResult"
-          :popularPostResult="popularPostResult"
-          :limitStringFunc="limitString"
-          :defaultImgLink="defaultImgLink"
-        />
       </div>
     </div>
   </Layout>
@@ -117,7 +107,6 @@ import Markdown from "vue3-markdown-it";
 import Layout from "../../shared/Layout";
 import AppLink from "../../shared/AppLink.vue";
 import HandleMsg from "../../shared/HandleMsg.vue";
-import BlogSideBar from "./BlogSideBar.vue";
 import BlogComment from "./comments-replies/Comments.vue";
 import BlogReplies from "./comments-replies/Replies.vue";
 import { limitString } from "../../helper/util";
@@ -131,22 +120,11 @@ const props = defineProps({
     type: String,
     default: "",
   },
-  pageTitle:{
+  pageTitle: {
     type: String,
-    default:"",
+    default: "",
   },
-  latestPostResult: {
-    type: Object,
-    default: {},
-  },
-  popularPostResult: {
-    type: Object,
-    default: {},
-  },
-  categoriesResult: {
-    type: Array,
-    default: [],
-  },
+
   singlePostResult: {
     type: Object,
     default: null,

@@ -1,3 +1,7 @@
+.sort-blog-post-wrapper {
+    height: 5rem;
+}
+
 .post-wrapper {
     background-color: $whiteColor;
     padding-left: 1rem;
@@ -19,11 +23,11 @@
 }
 
 .post-entry-category-link-span a {
-    color: $baseColor;
     font-size: 1rem;
     text-decoration: underline;
     display: inline-block;
-    margin-right: 0.5rem;
+    margin-right: 0.6rem;
+    cursor: pointer;
 }
 
 .post-entry-title a {

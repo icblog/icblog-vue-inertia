@@ -4,15 +4,7 @@
       <div class="container">
         <div class="row pt-5">
           <div class="col-md-9 mx-auto text-center pt-5">
-            <div class="row">
-              <!-- <div class="col-md-6 mx-auto">
-                <img
-                  src="../../../public/images/ic-avatar.jpg"
-                  class="ic-avatar-img"
-                  alt="Isaac profile image"
-                />
-              </div> -->
-            </div>
+            <div class="row"></div>
             <h2>Hi, I'm Isaac Cobbinah.</h2>
             <p class="mb-4">
               I'm self-taught full-stack php web developer with genuine passion for
@@ -110,8 +102,8 @@
           <div class="col-md-9 mx-auto text-center mb-3">
             <h2 class="section-h2">Projects</h2>
             <p>
-              Below are a few personal projects I have completed over the course of my
-              coding journey.
+              Below are a few projects I have completed over the course of my coding
+              journey.
             </p>
           </div>
         </div>
