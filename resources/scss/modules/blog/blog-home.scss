@@ -22,12 +22,18 @@
 
 }
 
-.post-entry-category-link-span a {
+.post-entry-category-link-span a,
+.blog-details-span-link {
     font-size: 1rem;
     text-decoration: underline;
     display: inline-block;
     margin-right: 0.6rem;
     cursor: pointer;
+    color: $primaryColor;
+
+    &:hover {
+        color: $primaryColorDark;
+    }
 }
 
 .post-entry-title a {

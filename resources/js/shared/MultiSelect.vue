@@ -230,7 +230,7 @@ const removeSelected = (selected_id) => {
   const tempObj = removeItemFromArrOrObjByValue(
     selected_id,
     props.defaultOptionSelected,
-    "id"
+    props.whatToget
   );
 
   emit("updateSelectedOptionInput", {

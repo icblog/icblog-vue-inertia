@@ -30,11 +30,11 @@
                   >
                     <h5 class="pb-2">Already saved categories</h5>
                     <!-- Filter category -->
-                    <div class="admin-catgory-result-wrapper-form-input">
+                    <div class="admin-catgory-result-wrapper-form-input pb-4">
                       <LocalSearch
                         :oldResultObj="reactiveData.oldCategoriesData"
                         whatToCheck="name"
-                        @updateCategoriesResult="returnFilteredCategoriesResult"
+                        @updateResultObj="returnFilteredCategoriesResult"
                       />
                     </div>
 
@@ -204,10 +204,10 @@ const props = defineProps({
     type: Object,
     default: {},
   },
-  pageTitle:{
+  pageTitle: {
     type: String,
     default: "",
-  }
+  },
 });
 
 const reactiveData = reactive({

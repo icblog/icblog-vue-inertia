@@ -50,10 +50,13 @@
 
                 <!-- Multi Select componenet -->
                 <MultiSelect
-                  @addorremove="updateCategoryIds"
-                  :categoriesResult="categoriesResult"
-                  :selectError="errors.selectedCategories"
-                  :categoryIds="createPostFormData.selectedCategories"
+                  @updateSelectedOptionInput="updateCategoryIds"
+                  :resultObj="categoriesResult"
+                  whatToget="id"
+                  labelName="Categories"
+                  :labelPrepend="true"
+                  :inputErrMsg="errors.selectedCategories"
+                  :defaultOptionSelected="createPostFormData.selectedCategories"
                 />
 
                 <!-- Post body componenet -->
@@ -116,7 +119,7 @@ import Layout from "../../shared/Layout";
 import LoadingIndicator from "../../shared/LoadingIndicator.vue";
 import HandleMsg from "../../shared/HandleMsg";
 import PostBody from "./PostBody";
-import MultiSelect from "./MultiSelect";
+import MultiSelect from "../../shared/MultiSelect";
 import FileUpload from "./FileUpload";
 import { focusOnFirstInput } from "../../helper/util";
 
@@ -128,10 +131,10 @@ const props = defineProps({
     type: Object,
     default: {},
   },
-  pageTitle:{
+  pageTitle: {
     type: String,
     default: "",
-  }
+  },
 });
 
 const createPostFormData = reactive({
@@ -144,8 +147,13 @@ const createPostFormData = reactive({
   totalFiles: 0,
 });
 
-const updateCategoryIds = (newSelectedValue) => {
-  createPostFormData.selectedCategories = newSelectedValue;
+const updateCategoryIds = (selected_res) => {
+  if (selected_res.action == "push") {
+    createPostFormData.selectedCategories.push(selected_res.value);
+  } else if (selected_res.action == "replace") {
+    createPostFormData.selectedCategories = selected_res.value;
+  }
+  // console.log(createPostFormData.selectedCategories);
 };
 
 const updateImages = (newImagesArray) => {

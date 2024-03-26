@@ -124,18 +124,18 @@
                           :key="i"
                           class="post-entry-category-link-span"
                         >
-                          <!-- <span
+                          <span
                             class="blog-details-span-link"
                             @click="() => updateSelectedCategory(categoryEntry)"
                           >
                             {{ categoryEntry }}
-                          </span> -->
-                          <AppLink
+                          </span>
+                          <!-- <AppLink
                             :linkUrl="`/blog/category/${
                               returnPostEntryCatLinkArray(postEntry).catSlugArray[i]
                             }/latest`"
                             >{{ categoryEntry }}</AppLink
-                          > </span
+                          >--> </span
                         ><br />
                         <strong>Views:</strong> {{ postEntry.views }}
                       </p>
@@ -211,10 +211,6 @@ export default {
     urlAction: {
       type: String,
       default: "",
-    },
-    sort: {
-      type: String,
-      default: "latest",
     },
     defaultImgLink: {
       type: String,

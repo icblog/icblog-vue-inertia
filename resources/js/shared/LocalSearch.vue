@@ -81,7 +81,6 @@ watch(filterText, (newValue) => {
 
   if (newValue == "") {
     newArrObj = props.oldResultObj;
-    //console.log(newArrObj);
   } else {
     if (props.elementName == "sidebar") {
       newArrObj = sortSideBarData(newValue);

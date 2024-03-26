@@ -113,6 +113,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  focusOnInput: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const searchData = reactive({
@@ -163,7 +167,7 @@ const handleSearchForm = async (searchedWordValue) => {
 
 watchEffect(() => {
   //Keep an eye on the search bar to see if it visible
-  if (props.isSearchOn) {
+  if (props.isSearchOn && props.focusOnInput) {
     //Wait afew seconds for the input to become ready
     //before focusing on it.
     setTimeout(() => {
