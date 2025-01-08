@@ -17,4 +17,10 @@ class HomeController extends BaseController
         Meta::addMeta('description', 'Isaac Cobbinah web developer');
         return Inertia::render('Home', $dataToView);
     }
+    public function test()
+    {
+        $pageTitle  =  "Test";
+        $dataToView = array("pageTitle" => $pageTitle);
+        return Inertia::render('Test', $dataToView);
+    }
 }

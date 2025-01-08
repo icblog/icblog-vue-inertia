@@ -39,6 +39,7 @@ use App\Http\Controllers\IvHomeController;
 // ==========HOME ROUTE===========//
 Route::get('/', [HomeController::class, 'index'])->name("home.index");
 Route::get('/home', [HomeController::class, 'index'])->name("home.index");
+Route::get('/test', [HomeController::class, 'test'])->name("home.test");
 
 // ==========NOTIFICATION ROUTE===========//
 Route::get('/notification', [NotificationController::class, 'index'])->name("notification.index");

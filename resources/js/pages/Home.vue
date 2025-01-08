@@ -5,10 +5,9 @@
         <div class="row pt-5">
           <div class="col-md-9 mx-auto text-center pt-5">
             <div class="row"></div>
-            <h2>Hi, I'm Isaac Cobbinah.</h2>
+            <h2>Hello, I'm Isaac Cobbinah.</h2>
             <p class="mb-4">
-              I'm self-taught full-stack php web developer with genuine passion for
-              coding.
+              A full-stack software developer with genuine passion for coding.
             </p>
             <AppButton
               customClass="primary-btn pl-5 pr-5"
@@ -29,8 +28,8 @@
           <div class="col-md-6 pr-4">
             <h5 class="pb-3 pt-2">How I started</h5>
             <p>
-              Around 2015 my interest in web tech grew and therefore decided to take my
-              first coding lessions in Html & Javascript on
+              In 2020 my interest in software grew and therefore decided to take my first
+              coding lessions in Html & Javascript on
               <a
                 class="w3c-link"
                 href="https://www.w3schools.com/"
@@ -45,7 +44,8 @@
               What started as hobby and a simple
               <strong>"Hello World"</strong> application has become a full blown passion
               of mine as years gone by and has offered me opportunity to constantly learn
-              and further develope my skills in solving web application problems.
+              and further develope my skills in solving real world problems with software
+              application.
             </p>
             <AppButton
               customClass="primary-btn pl-5 pr-5"
@@ -56,26 +56,27 @@
           <div class="col-md-6 pl-4">
             <h5 class="pb-3 pt-2">My Skills</h5>
             <p>
-              Web stack evolves therefore I'm constantly learning and improving my skills,
+              Technology evolves over time, therefore I'm constantly learning and improving my skills,
               below are what I'm currently familiar with.
             </p>
 
             <div class="skill-detail">
               <p class="skills-heading">Languages</p>
               <div class="all-skill-wrapper">
-                <span>Html/Html5</span>
-                <span>Css/Css3/Scss</span>
+                <span>Html, Html5</span>
+                <span>Css, Css3, Scss</span>
                 <span>JavaScript</span>
                 <span>Php</span>
+                <span>Python (currently learning)</span>
               </div>
             </div>
             <!-- end languages -->
             <div class="skill-detail">
               <p class="skills-heading">Frameworks</p>
               <div class="all-skill-wrapper">
-                <span>Laravel/Blade</span>
+                <span>Laravel, Blade</span>
                 <span>Bootstrap</span>
-                <span> JQuery/Ajax</span>
+                <span> JQuery, Ajax</span>
                 <!-- <span>React Js</span> -->
                 <span>Vue Js</span>
                 <span>Inertia Js</span>
@@ -97,8 +98,8 @@
     </section>
 
     <section ref="projectsSectionRef" class="project-section-wrapper section-wrapper">
-      <div class="container">
-        <div class="row mb-5">
+      <div class="container pb-0 mb-0">
+        <div class="row pb-0 mb-0">
           <div class="col-md-9 mx-auto text-center mb-3">
             <h2 class="section-h2">Projects</h2>
             <p>
@@ -107,137 +108,17 @@
             </p>
           </div>
         </div>
-        <carousel class="story-carousel story-carousel--colors" :hideArrowsOnBound="true">
-          <slide class="story-carousel__slide">
-            <div class="row pb-4">
-              <div class="col-md-8">
-                <img
-                  src="../../../public/images/adom-balloons.png"
-                  class="projects__row-img"
-                  alt="Adom balloons project image"
-                />
-              </div>
-              <div class="col-md-4">
-                <h5 class="pb-3 pt-2">Adom balloons</h5>
-                <p>
-                  I volunteered and built this application to help small business that
-                  offer event decoration services. Not only it did help improve my web
-                  development skills but made a real difference also to the start up.
-                </p>
-                <span class="mr-4"
-                  ><AppLink linkType="ext" linkUrl="https://adomballoons.icblog.uk/"
-                    >Live</AppLink
-                  ></span
-                >
-                <span
-                  ><AppLink
-                    linkType="ext"
-                    linkUrl="https://github.com/icblog/Adom-laravel"
-                    >Source code</AppLink
-                  ></span
-                >
-              </div>
-            </div>
-            <!-- end project -->
-          </slide>
-
-          <slide class="story-carousel__slide">
-            <div class="row pb-4">
-              <div class="col-md-8">
-                <img
-                  src="../../../public/images/ivisitor.png"
-                  class="projects__row-img"
-                  alt="Icblog project image"
-                />
-              </div>
-              <div class="col-md-4">
-                <h5 class="pb-3 pt-2">Ic visitors</h5>
-                <p>
-                  This application was inspired by a visitors sign in and out system in my
-                  current work place that needed some improvements. I created a demo
-                  version from scratch to show the development team and my line manager
-                  how to improve it.
-                </p>
-                <span class="mr-4"
-                  ><AppLink linkType="ext" linkUrl="https://iv.icblog.uk/"
-                    >Live</AppLink
-                  ></span
-                >
-                <span
-                  ><AppLink linkType="ext" linkUrl="https://github.com/icblog/ivisitor"
-                    >Source code</AppLink
-                  ></span
-                >
-              </div>
-            </div>
-            <!-- end project -->
-          </slide>
-          <slide class="story-carousel__slide">
-            <div class="row pb-4">
-              <div class="col-md-8">
-                <img
-                  src="../../../public/images/xyz-admin.png"
-                  class="projects__row-img"
-                  alt="Icblog project image"
-                />
-              </div>
-              <div class="col-md-4">
-                <h5 class="pb-3 pt-2">IC-admin</h5>
-                <p>
-                  This is a demo admin system I created to manage all applications for a
-                  fictional Ic company app.
-                </p>
-                <span class="mr-4"
-                  ><AppLink linkType="ext" linkUrl="https://icadmin.icblog.uk/"
-                    >Live</AppLink
-                  ></span
-                >
-                <span
-                  ><AppLink linkType="ext" linkUrl="https://github.com/icblog/xyzadmin"
-                    >Source code</AppLink
-                  ></span
-                >
-              </div>
-            </div>
-            <!-- end project -->
-          </slide>
-          <slide class="story-carousel__slide">
-            <div class="row pb-4">
-              <div class="col-md-8">
-                <img
-                  src="../../../public/images/icblog-portfolio-img.png"
-                  class="projects__row-img"
-                  alt="Icblog project image"
-                />
-              </div>
-              <div class="col-md-4">
-                <h5 class="pb-3 pt-2">Icblog</h5>
-                <p>
-                  This is the site you're currently browsing. Here, I showcase my skills
-                  and what I know so far with a blog section to give something back to the
-                  online community that has been a huge part of my coding journey.
-                </p>
-                <!-- <span class="mr-4">
-                  <AppButton :btnFunc="() => handlePageNav('home')">Live</AppButton></span
-                > -->
-                <span
-                  ><AppLink
-                    linkType="ext"
-                    linkUrl="https://github.com/icblog/icblog-vue-inertia"
-                    >Source code</AppLink
-                  ></span
-                >
-              </div>
-            </div>
-            <!-- end project -->
-          </slide>
-        </carousel>
-        <hr />
       </div>
+      <MainCarousel />
     </section>
 
     <section ref="contactSectionRef" class="contact-section-wrapper section-wrapper">
-      <div class="container pt-4 pb-4">
+      <div class="container pt-0 mt-0 pb-5">
+        <div class="row pt-0 mt-0 pb-5">
+          <div class="col-md-12 pt-0 mt-0">
+            <hr />
+          </div>
+        </div>
         <div class="row">
           <div class="col-md-9 mx-auto">
             <div class="text-center">
@@ -349,10 +230,9 @@
 
 <script setup>
 import { ref, reactive } from "vue";
-import { Carousel, Slide } from "vue-snap";
-import "vue-snap/dist/vue-snap.css";
 import axios from "../api/axios";
 import Layout from "../shared/Layout";
+import MainCarousel from "./MainCarousel";
 import AppButton from "../shared/AppButton";
 import AppLink from "../shared/AppLink";
 import HandleMsg from "../shared/HandleMsg";
