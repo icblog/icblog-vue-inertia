@@ -1,10 +1,10 @@
 <template>
   <li v-if="$page.component.toLowerCase() == 'blog/bloghome' && !$page.props.isLoggedIn">
-    <AppLink linkUrl="/login" className="header-nav-link"> Login/Register </AppLink>
+    <AppLink linkUrl="/login" className="header-nav-link"> LOGIN/REGISTER</AppLink>
   </li>
 
   <li v-if="$page.component.toLowerCase() != 'blog/bloghome'">
-    <AppLink linkUrl="/blog/post/all" className="header-nav-link"> Blog </AppLink>
+    <AppLink linkUrl="/blog/post/all" className="header-nav-link"> BLOG </AppLink>
   </li>
 
   <li v-show="$page.component.toLowerCase() == 'home'">
@@ -17,7 +17,7 @@
         }
       "
     >
-      Contact
+      CONTACT
     </AppButton>
   </li>
   <li v-show="$page.component.toLowerCase() == 'home'">
@@ -30,7 +30,7 @@
         }
       "
     >
-      Projects
+      PROJECTS
     </AppButton>
   </li>
   <li v-show="$page.component.toLowerCase() == 'home'">
@@ -43,7 +43,7 @@
         }
       "
     >
-      About</AppButton
+      ABOUT</AppButton
     >
   </li>
   <li>
@@ -52,7 +52,7 @@
       linkUrl="/"
       className="header-nav-link"
     >
-      Home</AppLink
+      HOME</AppLink
     >
     <AppButton
       v-else
@@ -64,7 +64,7 @@
         }
       "
     >
-      Home</AppButton
+      HOME</AppButton
     >
   </li>
 </template>

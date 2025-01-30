@@ -48,12 +48,12 @@ header .header-content-wrapper .middle-content-wrapper ul li button {
 	text-decoration: none;
 	color: $blackColor;
 	font-family: $hfontFamily;
-	font-size: 0.975rem;
-	font-weight: 700;
+	font-size: 0.970rem;
+	font-weight: 500;
 	cursor: pointer;
 
 	&:hover {
-		color: $primaryColor;
+		color: $darkGreyColor;
 	}
 }
 

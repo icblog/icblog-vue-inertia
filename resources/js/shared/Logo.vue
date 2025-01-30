@@ -1,6 +1,6 @@
 <template>
   <div class="logo-wrapper">
-    <AppLink linkUrl="/"> Ic </AppLink>
+    <AppLink linkUrl="/">I.COBBINAH</AppLink>
   </div>
 </template>
 

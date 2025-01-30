@@ -1,12 +1,10 @@
 <template>
   <Layout :pageTitle="pageTitle" :handlePageNav="handlePageNav">
-    <section ref="homeSectionRef" class="home-section-wrapper section-wrapper">
-      <div class="container">
-        <div class="row pt-5">
-          <div class="col-md-9 mx-auto text-center pt-5">
-            <div class="row"></div>
-            <h2>Hello, I'm Isaac Cobbinah.</h2>
-            <p class="mb-4">
+    <section ref="homeSectionRef" class="home-section-wrapper">
+
+            <div class="hero-text-div">
+            <h2 class="hero-text-h2">Hello, I'm Isaac Cobbinah.</h2>
+            <p class="mb-6">
               A full-stack software developer with genuine passion for coding.
             </p>
             <AppButton
@@ -15,49 +13,42 @@
               >Projects</AppButton
             >
           </div>
-        </div>
-      </div>
+        
     </section>
 
-    <section ref="aboutSectionRef" class="about-section-wrapper section-wrapper">
-      <div class="container">
+    <section ref="aboutSectionRef" class="about-section-wrapper pt-5">
+      <div class="container pt-2">
         <div class="row">
           <div class="col-md-9 mx-auto text-center">
-            <h2 class="section-h2 pb-5">About me</h2>
+            <h2 class="section-h2 pb-5">ABOUT ME</h2>
           </div>
           <div class="col-md-6 pr-4">
-            <h5 class="pb-3 pt-2">How I started</h5>
+            <h6 class="pb-3 pt-2">How I started</h6>
             <p>
-              In 2020 my interest in software grew and therefore decided to take my first
-              coding lessions in Html & Javascript on
+              In 2020, my interest in software development grew, prompting me to take my first coding lessons in HTML and JavaScript on the
               <a
                 class="w3c-link"
                 href="https://www.w3schools.com/"
                 rel="noreferrer"
                 target="_blank"
                 >w3schools website</a
-              >
-              and ever since I produced the famous <strong>"Hello World"</strong> to the
-              console of my first application I knew I have found a new hobby.
+              >.
+              The moment I produced the famous <strong>"Hello World"</strong> in the console of my first application, I knew I had discovered a new hobby.
             </p>
             <p>
-              What started as hobby and a simple
-              <strong>"Hello World"</strong> application has become a full blown passion
-              of mine as years gone by and has offered me opportunity to constantly learn
-              and further develope my skills in solving real world problems with software
-              application.
+              What began as a simple hobby and a basic <strong>"Hello World"</strong> app has since evolved into a full-blown passion. Over the years, this journey has not only fueled my continuous learning but has also provided me with the opportunity to develop real-world solutions through software applications.
+              
             </p>
             <AppButton
               customClass="primary-btn pl-5 pr-5"
               :btnFunc="() => handlePageNav('contact')"
-              >Contact me</AppButton
+              >Get in touch</AppButton
             >
           </div>
           <div class="col-md-6 pl-4">
-            <h5 class="pb-3 pt-2">My Skills</h5>
+            <h6 class="pb-3 pt-2">My skills</h6>
             <p>
-              Technology evolves over time, therefore I'm constantly learning and improving my skills,
-              below are what I'm currently familiar with.
+              Technology evolves constantly, so I am always learning and refining my skills. Below are the areas I am currently proficient in.
             </p>
 
             <div class="skill-detail">
@@ -97,14 +88,13 @@
       </div>
     </section>
 
-    <section ref="projectsSectionRef" class="project-section-wrapper section-wrapper">
-      <div class="container pb-0 mb-0">
+    <section ref="projectsSectionRef" class="project-section-wrapper pt-5">
+      <div class="container pb-0 mb-0 pt-3">
         <div class="row pb-0 mb-0">
           <div class="col-md-9 mx-auto text-center mb-3">
-            <h2 class="section-h2">Projects</h2>
+            <h2 class="section-h2 pb-3">PROJECTS</h2>
             <p>
-              Below are a few projects I have completed over the course of my coding
-              journey.
+              Here are a few projects I've completed throughout my coding journey.
             </p>
           </div>
         </div>
@@ -122,7 +112,7 @@
         <div class="row">
           <div class="col-md-9 mx-auto">
             <div class="text-center">
-              <h2 class="section-h2">Contact</h2>
+              <h2 class="section-h2">GET IN TOUCH</h2>
               <p>
                 Use the form below to message me and I will get back to you as soon as I
                 can thank you.
@@ -199,7 +189,7 @@
                       v-model="contactForm.formData.message"
                       class="form-control"
                       id="message"
-                      maxlength="6000"
+                      maxlength="2000"
                       autocomplete="off"
                       @focus="() => removeError('message')"
                     >
